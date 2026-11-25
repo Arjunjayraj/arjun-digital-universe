@@ -1,0 +1,150 @@
+@import "tailwindcss";
+
+@theme {
+  --color-warm-ivory: #F8F5EF;
+  --color-powder-blue: #DCE8F0;
+  --color-soft-lavender: #DCD2E8;
+  --color-dusty-blush: #EED8D0;
+  --color-sage-green: #C7D9CF;
+  --color-champagne-gold: #B99A65;
+  --color-primary: #745A2C;
+  --color-on-primary: #FFFFFF;
+  --color-primary-container: #FFEED8;
+  --color-on-primary-container: #271900;
+  --color-secondary: #3A4A43;
+  --color-on-secondary: #FFFFFF;
+  --color-secondary-container: #D5E7DD;
+  --color-on-secondary-container: #0F1F18;
+  --color-surface: #F8F5EF;
+  --color-on-surface: #1C1C18;
+  --color-surface-container-low: #FEFCF9;
+  --color-surface-container: #F3F0EA;
+  --color-surface-container-high: #E5E2DC;
+  --color-on-surface-variant: #474743;
+  --color-outline: #787772;
+  --color-outline-variant: #C9C6C1;
+  --color-error: #BA1A1A;
+  --color-on-error: #FFFFFF;
+
+  --font-display: "Crimson Pro", Georgia, serif;
+  --font-headline: "Crimson Pro", Georgia, serif;
+  --font-title: "Lato", system-ui, sans-serif;
+  --font-body: "Lato", system-ui, sans-serif;
+  --font-label: "Lato", system-ui, sans-serif;
+  --font-mono: "Spline Sans Mono", monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+}
+
+@layer base {
+  html,
+  body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background-color: #F8F5EF;
+    color: #1C1C18;
+    scroll-behavior: smooth;
+  }
+}
+
+.material-symbols-outlined {
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  line-height: 1 !important;
+  box-sizing: content-box;
+  overflow: hidden;
+  white-space: nowrap;
+  direction: ltr;
+  vertical-align: middle;
+}
+
+.aether-glass {
+  background: rgba(248, 245, 239, 0.86);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  box-shadow: 0 20px 50px rgba(116, 90, 44, 0.09);
+}
+
+.aether-glass-strong {
+  background: rgba(254, 252, 249, 0.94);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 24px 60px rgba(116, 90, 44, 0.12);
+}
+
+/* Solid translucent surface for HUD over active WebGL canvas (avoids backdrop-filter stalls) */
+.aether-hud-surface {
+  background: rgba(254, 252, 249, 0.94);
+  box-shadow: 0 18px 44px rgba(116, 90, 44, 0.12);
+}
+
+.ivory-card {
+  background: rgba(248, 245, 239, 0.9);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 14px 36px rgba(116, 90, 44, 0.1);
+}
+
+.sky-backdrop {
+  background: radial-gradient(circle at 50% 25%, #F8F5EF 0%, #DCE8F0 52%, #DCD2E8 100%);
+}
+
+.sky-backdrop-warm {
+  background: radial-gradient(circle at 80% 15%, #F8F5EF 0%, #DCE8F0 52%, #EED8D0 100%);
+}
+
+.hero-scrim {
+  background: linear-gradient(
+    90deg,
+    rgba(248, 245, 239, 0.95) 0%,
+    rgba(248, 245, 239, 0.84) 50%,
+    rgba(248, 245, 239, 0.12) 86%
+  );
+}
+
+.panel-scrim {
+  background: linear-gradient(
+    180deg,
+    rgba(28, 28, 24, 0.32) 0%,
+    rgba(28, 28, 24, 0.04) 42%,
+    rgba(28, 28, 24, 0.16) 100%
+  );
+}
+
+@keyframes gentleFloat {
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+.animate-float-slow {
+  animation: gentleFloat 5s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float-slow {
+    animation: none !important;
+  }
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+.aether-scroll::-webkit-scrollbar {
+  width: 5px;
+}
+.aether-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.aether-scroll::-webkit-scrollbar-thumb {
+  background: rgba(185, 154, 101, 0.38);
+  border-radius: 9999px;
+}

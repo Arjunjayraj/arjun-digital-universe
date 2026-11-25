@@ -1,0 +1,831 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether — Floating Portfolio World of Arjun Jayraj</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="fd517ce212bcef0a===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'warm-ivory': '#F8F5EF',
+        'powder-blue': '#DCE8F0',
+        'soft-lavender': '#DCD2E8',
+        'dusty-blush': '#EED8D0',
+        'sage-green': '#C7D9CF',
+        'champagne-gold': '#B99A65',
+        'primary': '#745A2C',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#FFEED8',
+        'on-primary-container': '#271900',
+        'secondary': '#3A4A43',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#D5E7DD',
+        'on-secondary-container': '#0F1F18',
+        'surface': '#F8F5EF',
+        'on-surface': '#1C1C18',
+        'surface-container-low': '#FEFCF9',
+        'surface-container': '#F3F0EA',
+        'surface-container-high': '#E5E2DC',
+        'on-surface-variant': '#474743',
+        'outline': '#787772',
+        'outline-variant': '#C9C6C1',
+        'error': '#BA1A1A',
+        'on-error': '#FFFFFF',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '16px',
+        'lg': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Crimson Pro"', 'sans-serif'],
+        'headline': ['"Crimson Pro"', 'sans-serif'],
+        'title': ['"Lato"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.5px', fontWeight: '500' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.25px', fontWeight: '500' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '0px', fontWeight: '600' }],
+        'headline-sm': ['24px', { lineHeight: '30px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['18px', { lineHeight: '24px', letterSpacing: '0.1px', fontWeight: '700' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0.15px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0.15px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.4px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '180ms',
+        'surface-enter': '320ms',
+        'surface-exit': '200ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&amp;family=Lato:wght@400;700&amp;family=Spline+Sans+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #F8F5EF;
+      scroll-behavior: smooth;
+    }
+    .ivory-card {
+      background: rgba(248, 245, 239, 0.88);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 14px 36px rgba(116, 90, 44, 0.10);
+    }
+    .hero-scrim {
+      background: linear-gradient(90deg, rgba(248, 245, 239, 0.94) 0%, rgba(248, 245, 239, 0.84) 52%, rgba(248, 245, 239, 0.12) 85%);
+    }
+    .panel-scrim {
+      background: linear-gradient(180deg, rgba(28, 28, 24, 0.36) 0%, rgba(28, 28, 24, 0.04) 42%, rgba(28, 28, 24, 0.14) 100%);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js" crossorigin></script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+  <div id="root" class="min-h-screen w-full"></div>
+
+  <script data-stitch-original-script="55665094d564d1dc===../../images/hero_castle_world.jpg|||0dfdebea1556073c===../../images/islands_panorama.jpg|||bd7fcc41d3986958===../../images/island_home_vista.jpg|||3311a8ccabb62384===../../images/island_knowledge_garden.jpg|||0a6c8ea2dcf1c4a8===../../images/island_project_gallery.jpg|||36e1ee1144467f70===../../images/island_hall_achievements.jpg|||035e868da40aaf19===../../images/island_library.jpg|||fb5031f12ea45fe9===../../images/island_contact_portal.jpg">
+    (function () {
+      const e = React.createElement;
+      const { useState, useEffect, useRef } = React;
+
+      // =========================================================================
+      // INTERACTIVE 3D SANCTUARY MODAL (Launched by "ENTER MY WORLD ->")
+      // =========================================================================
+      function World3DModal({ open, onClose }) {
+        const mountRef = useRef(null);
+        const [focusIdx, setFocusIdx] = useState(null);
+        const targetRef = useRef({ pos: [0, 12, 26], look: [0, 0, 0] });
+
+        useEffect(() => {
+          const views = [
+            { pos: [0, 5.5, 10], look: [0, 1, 0] },
+            { pos: [-10, 5.5, 4], look: [-10, 1, -4] },
+            { pos: [10, 5.5, 4], look: [10, 1, -4] },
+            { pos: [-9, 5.2, 14], look: [-9, 1, 7] },
+            { pos: [9, 5.2, 14], look: [9, 1, 7] },
+            { pos: [0, 5.5, 19], look: [0, 1, 12] }
+          ];
+          if (focusIdx === null) {
+            targetRef.current = { pos: [0, 12, 26], look: [0, 0, 0] };
+          } else if (views[focusIdx]) {
+            targetRef.current = views[focusIdx];
+          }
+        }, [focusIdx]);
+
+        useEffect(() => {
+          if (!open) return;
+          const el = mountRef.current;
+          if (!el || typeof THREE === 'undefined') return;
+
+          let renderer, scene, camera, controls, frameId;
+          try {
+            const w = el.clientWidth || 800;
+            const h = el.clientHeight || 500;
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color('#E8EFF4');
+            scene.fog = new THREE.FogExp2('#EAE6E1', 0.015);
+
+            camera = new THREE.PerspectiveCamera(45, w / h, 0.1, 150);
+            camera.position.set(0, 12, 26);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            el.innerHTML = '';
+            el.appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.06;
+            controls.maxPolarAngle = Math.PI * 0.48;
+
+            scene.add(new THREE.HemisphereLight('#F8F5EF', '#EED8D0', 1.2));
+            const sun = new THREE.DirectionalLight('#FFF5E4', 1.35);
+            sun.position.set(16, 28, 16);
+            scene.add(sun);
+
+            const matIvory = new THREE.MeshStandardMaterial({ color: '#F8F5EF', roughness: 0.5 });
+            const matLimestone = new THREE.MeshStandardMaterial({ color: '#E8DFD3', roughness: 0.85, flatShading: true });
+            const matSage = new THREE.MeshStandardMaterial({ color: '#C7D9CF', roughness: 0.75 });
+            const matGold = new THREE.MeshStandardMaterial({ color: '#B99A65', roughness: 0.25, metalness: 0.75 });
+            const matGlass = new THREE.MeshPhysicalMaterial({ color: '#DCE8F0', roughness: 0.1, transparent: true, opacity: 0.55 });
+
+            const islandPositions = [
+              { x: 0, y: 0, z: 0, r: 4.2 },
+              { x: -10, y: 0.6, z: -4, r: 3.0 },
+              { x: 10, y: 0.9, z: -4, r: 3.1 },
+              { x: -9, y: 0.4, z: 7, r: 2.8 },
+              { x: 9, y: 0.5, z: 7, r: 2.8 },
+              { x: 0, y: 1.0, z: 12, r: 2.7 }
+            ];
+
+            const groups = islandPositions.map((p, idx) => {
+              const g = new THREE.Group();
+              g.position.set(p.x, p.y, p.z);
+              const top = new THREE.Mesh(new THREE.CylinderGeometry(p.r, p.r * 0.9, 0.7, 14), idx === 2 ? matGlass : matSage);
+              const cone = new THREE.Mesh(new THREE.ConeGeometry(p.r * 0.88, p.r * 1.25, 10), matLimestone);
+              cone.rotation.x = Math.PI;
+              cone.position.y = -(p.r * 0.6 + 0.3);
+              const tower = new THREE.Mesh(new THREE.CylinderGeometry(0.6, 0.8, 2.2, 8), matIvory);
+              tower.position.y = 1.4;
+              const spire = new THREE.Mesh(new THREE.ConeGeometry(0.7, 1.1, 8), matGold);
+              spire.position.y = 3.0;
+              g.add(top, cone, tower, spire);
+              scene.add(g);
+              return { g, baseY: p.y, idx };
+            });
+
+            const clock = new THREE.Clock();
+            function tick() {
+              frameId = requestAnimationFrame(tick);
+              const t = clock.getElapsedTime();
+              groups.forEach((item) => {
+                item.g.position.y = item.baseY + Math.sin(t * 0.8 + item.idx) * 0.18;
+              });
+              const tgt = targetRef.current;
+              const desiredPos = new THREE.Vector3(tgt.pos[0], tgt.pos[1], tgt.pos[2]);
+              const desiredLook = new THREE.Vector3(tgt.look[0], tgt.look[1], tgt.look[2]);
+              camera.position.lerp(desiredPos, 0.045);
+              controls.target.lerp(desiredLook, 0.055);
+              controls.update();
+              renderer.render(scene, camera);
+            }
+            tick();
+
+            return () => {
+              cancelAnimationFrame(frameId);
+              controls.dispose();
+              renderer.dispose();
+            };
+          } catch (err) {}
+        }, [open]);
+
+        if (!open) return null;
+
+        const islandNames = ['The Home', 'Garden', 'Gallery', 'Achievements', 'Library', 'Contact'];
+
+        return e('div', {
+          role: 'dialog',
+          'aria-modal': 'true',
+          'aria-label': 'Interactive 3D World Explorer',
+          className: 'fixed inset-0 z-50 bg-on-surface/40 backdrop-blur-md flex items-center justify-center p-gutter-md'
+        },
+          e('div', { className: 'w-full max-w-5xl bg-surface rounded-lg border border-champagne-gold/50 overflow-hidden shadow-2xl flex flex-col' },
+            e('header', { className: 'px-gutter-lg py-gutter-md border-b border-outline-variant/40 flex items-center justify-between' },
+              e('div', { className: 'flex items-center gap-gutter-sm' },
+                e('span', { className: 'material-symbols-outlined text-primary' }, 'public'),
+                e('h2', { className: 'font-headline text-headline-sm text-on-surface' }, 'Aether — Interactive 3D Archipelago')
+              ),
+              e('button', {
+                type: 'button',
+                onClick: onClose,
+                'aria-label': 'Close 3D Explorer',
+                className: 'w-9 h-9 rounded-full bg-surface-container text-on-surface hover:bg-primary-container inline-flex items-center justify-center'
+              }, e('span', { className: 'material-symbols-outlined text-title-md' }, 'close'))
+            ),
+            e('div', { ref: mountRef, className: 'w-full h-[440px] cursor-grab active:cursor-grabbing' }),
+            e('footer', { className: 'px-gutter-lg py-gutter-sm bg-surface-container-low border-t border-outline-variant/40 flex flex-wrap items-center justify-between gap-gutter-sm' },
+              e('div', { className: 'flex flex-wrap items-center gap-gutter-xs' },
+                e('button', {
+                  type: 'button',
+                  onClick: () => setFocusIdx(null),
+                  className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm border ' + (focusIdx === null ? 'bg-primary text-on-primary border-primary' : 'bg-surface border-outline-variant text-on-surface')
+                }, 'Overview'),
+                islandNames.map((nm, idx) =>
+                  e('button', {
+                    key: nm,
+                    type: 'button',
+                    onClick: () => setFocusIdx(idx),
+                    className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm border ' + (focusIdx === idx ? 'bg-primary text-on-primary border-primary' : 'bg-surface border-outline-variant text-on-surface hover:bg-primary-container')
+                  }, nm)
+                )
+              ),
+              e('button', {
+                type: 'button',
+                onClick: onClose,
+                className: 'px-gutter-md py-gutter-xs rounded-full bg-primary text-on-primary font-label text-label-sm'
+              }, 'Return to Sanctuary')
+            )
+          )
+        );
+      }
+
+      // =========================================================================
+      // DETAIL MODAL (For "Learn More ->" or "View All Projects ->")
+      // =========================================================================
+      function DetailModal({ modalType, onClose }) {
+        if (!modalType) return null;
+
+        return e('div', {
+          role: 'dialog',
+          'aria-modal': 'true',
+          className: 'fixed inset-0 z-50 bg-on-surface/35 backdrop-blur-sm flex items-center justify-center p-gutter-md'
+        },
+          e('div', { className: 'w-full max-w-2xl bg-surface rounded-lg border border-champagne-gold/50 p-gutter-xl shadow-2xl flex flex-col gap-gutter-md max-h-[85vh] overflow-y-auto' },
+            e('header', { className: 'flex items-start justify-between gap-gutter-md border-b border-outline-variant/40 pb-gutter-md' },
+              e('div', null,
+                e('span', { className: 'font-label text-label-sm text-primary uppercase tracking-wider' },
+                  modalType === 'about' ? 'The Home — Profile' : 'Project Gallery — Full Collection'
+                ),
+                e('h2', { className: 'font-headline text-headline-lg-mobile text-on-surface' },
+                  modalType === 'about' ? 'Arjun Jayraj' : 'Featured & Recent Projects'
+                )
+              ),
+              e('button', {
+                type: 'button',
+                onClick: onClose,
+                'aria-label': 'Close modal',
+                className: 'w-9 h-9 rounded-full bg-surface-container text-on-surface hover:bg-primary-container inline-flex items-center justify-center shrink-0'
+              }, e('span', { className: 'material-symbols-outlined text-title-md' }, 'close'))
+            ),
+            modalType === 'about'
+              ? e('div', { className: 'flex flex-col gap-gutter-md' },
+                  e('p', { className: 'font-body text-body-lg text-on-surface text-pretty' },
+                    'BCA Cloud Computing Student at Kristu Jayanti University, Bengaluru (2025 – 2028) and Cloud Engineer & Web Developer with 2+ years of experience crafting scalable infrastructure and modern web applications.'
+                  ),
+                  e('div', { className: 'grid grid-cols-3 gap-gutter-sm' },
+                    [
+                      { v: '2+', l: 'Years Exp.' },
+                      { v: '15+', l: 'Projects' },
+                      { v: '10+', l: 'Happy Clients' }
+                    ].map((s) =>
+                      e('div', { key: s.l, className: 'p-gutter-md rounded-DEFAULT bg-surface-container-low border border-champagne-gold/30 text-center' },
+                        e('div', { className: 'font-headline text-headline-sm text-primary tabular-nums' }, s.v),
+                        e('div', { className: 'font-label text-label-sm text-on-surface-variant' }, s.l)
+                      )
+                    )
+                  ),
+                  e('a', {
+                    href: 'mailto:arjunarkmma@gmail.com?subject=CV%20Request%20%E2%80%94%20Arjun%20Jayraj',
+                    className: 'self-start px-gutter-lg py-gutter-sm rounded-full bg-primary text-on-primary font-label text-label-lg hover:bg-on-primary-container transition-colors'
+                  }, 'Request CV via Email')
+                )
+              : e('div', { className: 'grid grid-cols-1 sm:grid-cols-2 gap-gutter-md' },
+                  [
+                    { name: 'CareerPilot AI', tag: 'AI & Cloud Architecture', desc: 'Intelligent career navigation platform with AI-assisted roadmaps.' },
+                    { name: 'FindCart (FindKart)', tag: 'Smart Commerce', desc: 'Smart everyday shopping across India with Cash on Delivery.', url: 'https://findkart-hackahon.netlify.app/' },
+                    { name: 'Personal Portfolio', tag: 'Web & 3D Sanctuary', desc: 'Interactive portfolio built with React, Three.js, and Tailwind.', url: 'https://jayraj-folio-spark.lovable.app/' },
+                    { name: 'ShelfSync (Hackathon)', tag: 'Hackathon Build', desc: 'Rapidly prototyped inventory and discovery web platform.' },
+                    { name: 'Cloud Migration', tag: 'AWS & Azure', desc: 'Scalable infrastructure migration optimizing security and cost.' },
+                    { name: 'Dashboard Analytics', tag: 'Web App', desc: 'Interactive telemetry and analytics interface.' }
+                  ].map((p) =>
+                    e('div', { key: p.name, className: 'p-gutter-md rounded-DEFAULT bg-surface-container-low border border-outline-variant/60 flex flex-col justify-between gap-gutter-sm' },
+                      e('div', { className: 'flex flex-col gap-gutter-xs' },
+                        e('span', { className: 'font-label text-label-sm text-primary' }, p.tag),
+                        e('h3', { className: 'font-title text-title-md text-on-surface' }, p.name),
+                        e('p', { className: 'font-body text-body-md text-on-surface-variant' }, p.desc)
+                      ),
+                      p.url && e('a', {
+                        href: p.url,
+                        target: '_blank',
+                        rel: 'noopener noreferrer',
+                        className: 'self-start font-label text-label-sm text-primary hover:underline inline-flex items-center gap-gutter-xs'
+                      }, 'Visit Live', e('span', { className: 'material-symbols-outlined text-label-lg' }, 'open_in_new'))
+                    )
+                  )
+                )
+          )
+        );
+      }
+
+      // =========================================================================
+      // MAIN PAGE (Faithful to Reference Image Composition)
+      // =========================================================================
+      function AetherSanctuaryApp() {
+        const [worldModalOpen, setWorldModalOpen] = useState(false);
+        const [detailModal, setDetailModal] = useState(null);
+        const [mobileNavOpen, setMobileNavOpen] = useState(false);
+        const [msgName, setMsgName] = useState('');
+        const [msgEmail, setMsgEmail] = useState('');
+        const [msgBody, setMsgBody] = useState('');
+        const [msgSent, setMsgSent] = useState(false);
+
+        useEffect(() => {
+          const onKey = (ev) => {
+            if (ev.key === 'Escape') {
+              if (worldModalOpen) setWorldModalOpen(false);
+              else if (detailModal) setDetailModal(null);
+              else if (mobileNavOpen) setMobileNavOpen(false);
+            }
+          };
+          window.addEventListener('keydown', onKey);
+          return () => window.removeEventListener('keydown', onKey);
+        }, [worldModalOpen, detailModal, mobileNavOpen]);
+
+        const scrollTo = (id) => {
+          setMobileNavOpen(false);
+          const target = document.getElementById(id);
+          if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        };
+
+        return e('div', { className: 'min-h-screen w-full bg-surface text-on-surface flex flex-col' },
+
+          // -------------------------------------------------------------------
+          // 1. TOP HERO + EDITORIAL SIDEBAR SPLIT
+          // -------------------------------------------------------------------
+          e('section', { id: 'top', className: 'w-full grid grid-cols-1 lg:grid-cols-12 border-b border-outline-variant/40' },
+            // Left 8 cols: Castle Sky Panorama
+            e('div', { className: 'lg:col-span-8 relative min-h-[540px] sm:min-h-[600px] flex flex-col justify-between overflow-hidden' },
+              e('img', {
+                src: 'https://lh3.googleusercontent.com/aida/ALJJyrAT0tHk7Scov13Fk3DqrkR-_CPp--7Lq47Uyjt67Z9YTebDMKXn3WYzBR-4nnY97X03cjbHFW2tqQft15bRR1BVxHEmJyloH6oyaYFPVUQXdvqVCDJRn887SjB3bb0SzAapQreUmHEbcprxexF07jw4TW9iVRebzvkFO_erGe7e1ru6agpVaN5p7-DYdvHVZeS6yfu-HXvCN4fO9UXnxYJgLg42heZXlPiLBBRA9eDObV1OaOJl0-p9sA-4zg',
+                alt: 'Floating ivory castle above clouds with waterfalls and arched bridge',
+                className: 'absolute inset-0 w-full h-full object-cover object-right'
+              }),
+              e('div', { className: 'hero-scrim absolute inset-0' }),
+
+              // Top Navigation Bar
+              e('header', { className: 'relative z-20 px-gutter-lg sm:px-gutter-xl py-gutter-lg flex flex-wrap items-center justify-between gap-gutter-md' },
+                e('a', { href: '#top', className: 'inline-flex items-center gap-gutter-sm text-on-surface' },
+                  e('span', { className: 'material-symbols-outlined text-champagne-gold text-title-md', 'aria-hidden': 'true' }, 'spark'),
+                  e('span', { className: 'font-headline text-title-md tracking-widest uppercase font-semibold' }, 'ARJUN JAYRAJ')
+                ),
+                e('nav', { 'aria-label': 'Primary Navigation', className: 'hidden sm:flex items-center gap-gutter-lg' },
+                  [
+                    { label: 'Home', id: 'island-home' },
+                    { label: 'About', id: 'island-home' },
+                    { label: 'Skills', id: 'island-garden' },
+                    { label: 'Projects', id: 'island-gallery' },
+                    { label: 'Achievements', id: 'island-achievements' },
+                    { label: 'Contact', id: 'island-contact' }
+                  ].map((item) =>
+                    e('button', {
+                      key: item.label,
+                      type: 'button',
+                      onClick: () => scrollTo(item.id),
+                      className: 'font-body text-body-md text-on-surface hover:text-primary transition-colors'
+                    }, item.label)
+                  )
+                ),
+                e('button', {
+                  type: 'button',
+                  onClick: () => setMobileNavOpen(v => !v),
+                  'aria-label': 'Toggle Navigation Menu',
+                  className: 'sm:hidden ivory-card w-9 h-9 rounded-full border border-champagne-gold/40 inline-flex items-center justify-center text-on-surface'
+                }, e('span', { className: 'material-symbols-outlined text-title-md' }, mobileNavOpen ? 'close' : 'menu'))
+              ),
+              mobileNavOpen && e('nav', {
+                'aria-label': 'Mobile Navigation',
+                className: 'sm:hidden relative z-20 mx-gutter-lg ivory-card rounded-md border border-champagne-gold/40 p-gutter-sm grid grid-cols-2 gap-gutter-xs'
+              },
+                [
+                  { label: 'Home', id: 'island-home' },
+                  { label: 'Skills', id: 'island-garden' },
+                  { label: 'Projects', id: 'island-gallery' },
+                  { label: 'Achievements', id: 'island-achievements' },
+                  { label: 'Library', id: 'island-library' },
+                  { label: 'Contact', id: 'island-contact' }
+                ].map((item) =>
+                  e('button', {
+                    key: item.label,
+                    type: 'button',
+                    onClick: () => scrollTo(item.id),
+                    className: 'px-gutter-sm py-gutter-xs rounded-DEFAULT text-left font-body text-body-md text-on-surface hover:bg-primary-container'
+                  }, item.label)
+                )
+              ),
+
+              // Hero Typography & CTA
+              e('div', { className: 'relative z-10 px-gutter-lg sm:px-gutter-xl py-gutter-xl flex flex-col items-start gap-gutter-md max-w-xl' },
+                e('h1', { 'data-design-text-token': 'display-lg', className: 'font-display text-display-lg-mobile sm:text-display-lg text-on-surface tracking-tight uppercase' }, 'ARJUN JAYRAJ'),
+                e('p', { className: 'font-headline text-headline-sm italic text-on-surface' }, 'Exploring Ideas. Building Possibilities.'),
+                e('p', { className: 'font-body text-body-lg text-on-surface' }, 'Cloud Computing Student | Aspiring DevOps Engineer | Technology Enthusiast'),
+                e('button', {
+                  'data-component-id': 'button-primary',
+                  'data-component-type': 'button',
+                  'data-component-variant': 'primary',
+                  type: 'button',
+                  onClick: () => setWorldModalOpen(true),
+                  className: 'mt-gutter-xs inline-flex items-center gap-gutter-sm px-gutter-xl py-gutter-md rounded-full bg-surface-container-high/95 border border-champagne-gold/60 text-on-surface font-label text-label-lg uppercase tracking-wider hover:bg-primary hover:text-on-primary transition-colors shadow-sm'
+                },
+                  e('span', null, 'ENTER MY WORLD'),
+                  e('span', { className: 'material-symbols-outlined text-body-lg', 'aria-hidden': 'true' }, 'arrow_forward')
+                )
+              ),
+
+              // Bottom-left scroll hint
+              e('button', {
+                type: 'button',
+                onClick: () => scrollTo('explore-strip'),
+                className: 'relative z-10 px-gutter-lg sm:px-gutter-xl pb-gutter-lg inline-flex items-center gap-gutter-xs font-label text-label-sm text-on-surface hover:text-primary self-start'
+              },
+                e('span', { className: 'material-symbols-outlined text-body-lg' }, 'south'),
+                e('span', null, 'Scroll to explore')
+              )
+            ),
+
+            // Right 4 cols: Ivory Editorial Overview Panel
+            e('aside', { className: 'lg:col-span-4 bg-surface p-gutter-xl flex flex-col justify-center gap-gutter-lg border-t lg:border-t-0 lg:border-l border-outline-variant/40' },
+              e('div', { className: 'flex flex-col gap-gutter-sm' },
+                e('div', { className: 'flex items-center gap-gutter-sm' },
+                  e('span', { className: 'material-symbols-outlined text-champagne-gold text-headline-sm shrink-0', 'aria-hidden': 'true' }, 'spark'),
+                  e('h2', { className: 'font-headline text-headline-lg-mobile text-on-surface leading-snug' }, 'A Whole New World of Your Portfolio')
+                ),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' },
+                  'Not just a website, but an immersive 3D world. Explore different islands, discover your journey, and experience the story of Arjun Jayraj.'
+                )
+              ),
+              e('div', { className: 'flex flex-col gap-gutter-md' },
+                [
+                  { icon: 'public', title: 'Interactive 3D World', desc: 'Rotate, zoom and explore the floating islands.' },
+                  { icon: 'auto_awesome', title: 'Beautiful & Elegant Design', desc: 'Aesthetic, calm and premium visual experience.' },
+                  { icon: 'layers', title: 'All Your Details', desc: 'Projects, skills, achievements, education and more.' },
+                  { icon: 'devices', title: 'Smooth & Responsive', desc: 'Works perfectly on all devices.' }
+                ].map((feat) =>
+                  e('div', { key: feat.title, className: 'flex items-start gap-gutter-md' },
+                    e('span', { className: 'w-10 h-10 rounded-full bg-surface-container border border-outline-variant/60 flex items-center justify-center shrink-0 text-primary' },
+                      e('span', { className: 'material-symbols-outlined text-title-md' }, feat.icon)
+                    ),
+                    e('div', { className: 'flex flex-col' },
+                      e('span', { className: 'font-title text-body-lg font-bold text-on-surface' }, feat.title),
+                      e('span', { className: 'font-body text-body-md text-on-surface-variant' }, feat.desc)
+                    )
+                  )
+                )
+              )
+            )
+          ),
+
+          // -------------------------------------------------------------------
+          // 2. EXPLORE THE ISLANDS PANORAMIC STRIP
+          // -------------------------------------------------------------------
+          e('section', { id: 'explore-strip', className: 'w-full relative overflow-hidden border-b border-outline-variant/40 bg-surface' },
+            e('div', { className: 'grid grid-cols-1 lg:grid-cols-12 items-stretch' },
+              // Left Intro
+              e('div', { className: 'lg:col-span-3 p-gutter-xl flex flex-col justify-center gap-gutter-sm bg-surface z-10' },
+                e('span', { className: 'material-symbols-outlined text-champagne-gold text-headline-sm', 'aria-hidden': 'true' }, 'spark'),
+                e('h2', { className: 'font-headline text-headline-lg-mobile text-on-surface leading-tight' }, 'Explore The Islands'),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, 'Each island represents a part of my journey. Click to discover more.')
+              ),
+              // Right Panoramic Skyline + 6 Island Pill Labels
+              e('div', { className: 'lg:col-span-9 relative min-h-[260px] flex flex-col justify-end p-gutter-lg overflow-hidden' },
+                e('img', {
+                  src: 'https://lh3.googleusercontent.com/aida/ALJJyrDEDjH-p864sT4DrLk4IF8FNYC5Oqy-ZvbZ3bb-ZsMpVpz12FratnyHmwa11u4t0Ya8lj9OKMheNq7xrR1JYcrAEaDk72BqrOoqLjXFksOmrJTqeLmbqUW_DCSxtVN9AV9wWTxXXbfKCXHfjNaKRggtqsLlU5_KFqXC1kpxAskqhj8vSmem7Haw8MRJdLrSEnrBet0RAhtY7LAclcTam1lCXGNGcDDaT5xT0ytt7sDmCpZOzCaUsGAIvRs',
+                  alt: 'Panoramic view of six interconnected floating islands',
+                  className: 'absolute inset-0 w-full h-full object-cover'
+                }),
+                e('div', { className: 'relative z-10 flex flex-wrap items-center justify-center sm:justify-start gap-gutter-sm pt-section' },
+                  [
+                    { id: 'island-home', icon: 'castle', title: 'The Home' },
+                    { id: 'island-garden', icon: 'eco', title: 'Knowledge Garden' },
+                    { id: 'island-gallery', icon: 'museum', title: 'Project Gallery' },
+                    { id: 'island-achievements', icon: 'trophy', title: 'Achievements' },
+                    { id: 'island-library', icon: 'menu_book', title: 'The Library' },
+                    { id: 'island-contact', icon: 'mail', title: 'Contact Portal' }
+                  ].map((isl) =>
+                    e('button', {
+                      key: isl.id,
+                      type: 'button',
+                      onClick: () => scrollTo(isl.id),
+                      className: 'ivory-card px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/45 hover:border-primary transition-colors inline-flex items-center gap-gutter-xs text-on-surface whitespace-nowrap'
+                    },
+                      e('span', { className: 'material-symbols-outlined text-primary text-body-lg shrink-0' }, isl.icon),
+                      e('span', { className: 'font-title text-label-sm font-bold text-on-surface' }, isl.title)
+                    )
+                  )
+                )
+              )
+            )
+          ),
+
+          // -------------------------------------------------------------------
+          // 3. SIX FANTASY SANCTUARY PANELS (2x3 GRID)
+          // -------------------------------------------------------------------
+          e('main', { className: 'w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter-xs bg-surface p-gutter-xs' },
+
+            // PANEL 1: THE HOME
+            e('article', { id: 'island-home', className: 'relative min-h-[380px] rounded-sm overflow-hidden flex flex-col justify-between p-gutter-lg' },
+              e('img', { src: 'https://lh3.googleusercontent.com/aida/ALJJyrAUbJbi-QVpVxfsWsec4Q0FzSWgJdPwp5vcKah1Mq8GH34RHphQGSPmvtUDTa0nm33gP9HTgBoPO64gOZ1rmGjHpD_uHDHdwZNX4rKKCOZIImADgLz9dTUY5SsBRzuQJ1Wj_sEf-kzsUo4nDBh9SrV3Mp_B8CXucyK-hKH4o3xfOQOfFG84t-hyxT1X2Enl95YCVXcA69eZq0jWSbZ2n82dqscHDPjA8rxQPgIE0TgHQ2UPNG0-4PI8DUmz', alt: 'Sky terrace overlooking floating castles', className: 'absolute inset-0 w-full h-full object-cover' }),
+              e('div', { className: 'panel-scrim absolute inset-0' }),
+              e('header', { className: 'relative z-10 ivory-card self-start px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/40 flex items-center gap-gutter-xs text-on-surface' },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md' }, 'castle'),
+                e('h2', { className: 'font-headline text-headline-sm' }, 'The Home')
+              ),
+              e('div', { className: 'relative z-10 ivory-card self-end w-full sm:w-72 p-gutter-lg rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-sm' },
+                e('h3', { className: 'font-headline text-title-md font-bold text-on-surface' }, "Hi, I'm Arjun Jayraj"),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' },
+                  'BCA Cloud Computing Student at Kristu Jayanti University, Bengaluru. Passionate about cloud technologies, DevOps, cybersecurity and building real-world digital solutions.'
+                ),
+                e('button', {
+                  type: 'button',
+                  onClick: () => setDetailModal('about'),
+                  className: 'self-start px-gutter-md py-gutter-xs rounded-full bg-surface-container-low border border-outline-variant text-on-surface font-label text-label-sm hover:bg-primary hover:text-on-primary transition-colors inline-flex items-center gap-gutter-xs'
+                }, 'Learn More', e('span', { className: 'material-symbols-outlined text-label-lg' }, 'arrow_forward'))
+              )
+            ),
+
+            // PANEL 2: KNOWLEDGE GARDEN
+            e('article', { id: 'island-garden', className: 'relative min-h-[380px] rounded-sm overflow-hidden flex flex-col justify-between p-gutter-lg' },
+              e('img', { src: 'https://lh3.googleusercontent.com/aida/ALJJyrDU4Iw_A5icaECQK7ujdv0vZyG0JUUELhaRSKmSLHdeHPlHtm-kjgUDk0qDMIaB5bi7SXihzqsfO2kaCsDukuuO_IdlWOpDL7MahM-7YO4T8aQYiKqagLNf661CJ8YywjChwckZYUzLLZSQi98mifVz_INUu-aSRtDtgRnFQFDMbUXQmpgmIhqGTQC81ZvWGDPMOY_ef6fy1qqyREFH4G6wq7C_u2dA1-wnVMaeQM-aNcN1-coEaA4sqS4hhQuKVzjW4Q', alt: 'Lush floating botanical garden', className: 'absolute inset-0 w-full h-full object-cover' }),
+              e('div', { className: 'panel-scrim absolute inset-0' }),
+              e('header', { className: 'relative z-10 ivory-card self-start px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/40 flex items-center gap-gutter-xs text-on-surface' },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md' }, 'eco'),
+                e('h2', { className: 'font-headline text-headline-sm' }, 'Knowledge Garden')
+              ),
+              e('div', { className: 'relative z-10 flex flex-col sm:flex-row items-end justify-between gap-gutter-sm' },
+                // Floating skill orbs on the left matching reference image
+                e('div', { className: 'hidden sm:flex flex-wrap gap-gutter-xs max-w-[140px] pb-gutter-xs' },
+                  ['AWS', 'Linux', 'Docker', 'Python', 'Git', 'SQL'].map((orb) =>
+                    e('span', {
+                      key: orb,
+                      className: 'ivory-card px-gutter-sm py-gutter-xs rounded-full border border-champagne-gold/50 font-label text-label-sm font-bold text-on-surface shadow-sm'
+                    }, orb)
+                  )
+                ),
+                e('div', { className: 'ivory-card w-full sm:w-64 p-gutter-md rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-xs' },
+                  e('h3', { className: 'font-headline text-title-md font-bold text-on-surface mb-gutter-xs' }, 'My Tech Stack'),
+                  [
+                    'AWS (EC2, S3, IAM)',
+                    'Linux / Ubuntu',
+                    'Docker',
+                    'Python',
+                    'JavaScript',
+                    'Git / GitHub',
+                    'Networking (DNS, IP, Subnet)',
+                    'SQL / MongoDB',
+                    'Cloud & Security'
+                  ].map((sk) =>
+                    e('div', { key: sk, className: 'flex items-center gap-gutter-xs font-body text-body-md text-on-surface-variant' },
+                      e('span', { className: 'material-symbols-outlined text-champagne-gold text-label-sm' }, 'spark'),
+                      e('span', null, sk)
+                    )
+                  )
+                )
+              )
+            ),
+
+            // PANEL 3: PROJECT GALLERY
+            e('article', { id: 'island-gallery', className: 'relative min-h-[380px] rounded-sm overflow-hidden flex flex-col justify-between p-gutter-lg' },
+              e('img', { src: 'https://lh3.googleusercontent.com/aida/ALJJyrC5DguCZLY0NjeQzYvxs7j3Y48zji91QUJyR-_y9eETT4q4PhdVqtbZ4jKuqIi3AGrcDyckq0ScJp8pOk7hhrN_HimhHm0GZmU1sMddAAjF6x-syRvteLP0hv9IQiFM-Jz9ToOwWPoTL6YKg7hoEeY8QSN3Sgb4r32jTa3vgCWTCmSdMwE8aNhbaDN6-qvO5ZHKw4bhSDi7oI5sH81a5eYCUl1HKsg5N3ST8aChmVU4BEnd1UtwsdFuWsU92thuxXoy', alt: 'Glass dome museum pavilion', className: 'absolute inset-0 w-full h-full object-cover' }),
+              e('div', { className: 'panel-scrim absolute inset-0' }),
+              e('header', { className: 'relative z-10 ivory-card self-start px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/40 flex items-center gap-gutter-xs text-on-surface' },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md' }, 'museum'),
+                e('h2', { className: 'font-headline text-headline-sm' }, 'Project Gallery')
+              ),
+              e('div', { className: 'relative z-10 flex flex-col sm:flex-row items-end justify-between gap-gutter-sm' },
+                // Floating holographic project frames on the left matching reference image
+                e('div', { className: 'hidden sm:flex flex-col gap-gutter-xs max-w-[135px] pb-gutter-xs' },
+                  ['CareerPilot AI', 'FindCart', 'My Portfolio'].map((holo) =>
+                    e('button', {
+                      key: holo,
+                      type: 'button',
+                      onClick: () => setDetailModal('projects'),
+                      className: 'ivory-card px-gutter-sm py-gutter-xs rounded-DEFAULT border border-powder-blue text-left font-label text-label-sm font-bold text-on-surface hover:border-primary transition-colors'
+                    }, holo)
+                  )
+                ),
+                e('div', { className: 'ivory-card w-full sm:w-64 p-gutter-md rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-sm' },
+                  e('h3', { className: 'font-headline text-title-md font-bold text-on-surface' }, 'Featured Projects'),
+                  e('div', { className: 'flex flex-col gap-gutter-xs' },
+                    [
+                      { name: 'CareerPilot AI' },
+                      { name: 'FindCart', url: 'https://findkart-hackahon.netlify.app/' },
+                      { name: 'Personal Portfolio', url: 'https://jayraj-folio-spark.lovable.app/' },
+                      { name: 'ShelfSync (Hackathon)' }
+                    ].map((p) =>
+                      e('div', { key: p.name, className: 'flex items-center justify-between gap-gutter-xs font-body text-body-md text-on-surface' },
+                        e('span', { className: 'inline-flex items-center gap-gutter-xs' },
+                          e('span', { className: 'material-symbols-outlined text-champagne-gold text-label-sm' }, 'spark'),
+                          e('span', null, p.name)
+                        ),
+                        p.url && e('a', { href: p.url, target: '_blank', rel: 'noopener noreferrer', 'aria-label': 'Open ' + p.name, className: 'text-primary hover:text-on-primary-container' },
+                          e('span', { className: 'material-symbols-outlined text-body-md' }, 'open_in_new')
+                        )
+                      )
+                    )
+                  ),
+                  e('button', {
+                    type: 'button',
+                    onClick: () => setDetailModal('projects'),
+                    className: 'self-start px-gutter-md py-gutter-xs rounded-full bg-primary text-on-primary font-label text-label-sm hover:bg-on-primary-container transition-colors inline-flex items-center gap-gutter-xs'
+                  }, 'View All Projects', e('span', { className: 'material-symbols-outlined text-label-lg' }, 'arrow_forward'))
+                )
+              )
+            ),
+
+            // PANEL 4: HALL OF ACHIEVEMENTS
+            e('article', { id: 'island-achievements', className: 'relative min-h-[380px] rounded-sm overflow-hidden flex flex-col justify-between p-gutter-lg' },
+              e('img', { src: 'https://lh3.googleusercontent.com/aida/ALJJyrBUFeINKJLuAmpoUSXbxKPfCyouAjUafP2ykLlOD2lXy_yvYRKPJS2dVbvFjarI8kBD3k1dXwwBxW36qi3QmuzX6rN2x4ooMBr1MzQbvchn81xWwebK1AVMw7fDnp9IwVfEOfIXbxFO1P8XDpB73HOrkZjlNuVDkktx4rOiK4siTrBuVwdoQo4ZlUuhKh3xfFUWXmnPSrkcaXi8Tsp95oLKaAYefiJmEiiaGCucubFui9XoywNwIIA3w6VKHJfXYysPWw', alt: 'Sunlit marble colonnade hall with golden trophy', className: 'absolute inset-0 w-full h-full object-cover' }),
+              e('div', { className: 'panel-scrim absolute inset-0' }),
+              e('header', { className: 'relative z-10 ivory-card self-start px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/40 flex items-center gap-gutter-xs text-on-surface' },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md' }, 'trophy'),
+                e('h2', { className: 'font-headline text-headline-sm' }, 'Hall of Achievements')
+              ),
+              e('div', { className: 'relative z-10 ivory-card self-end w-full sm:w-80 p-gutter-lg rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-xs' },
+                [
+                  'Two-time National & State MMA Champion',
+                  'District-level MMA Champion',
+                  'National-level BJJ Achievement',
+                  'NCC C Certificate – Grade A',
+                  'All India Inter-University Nationals',
+                  'Unstop Campus Champion',
+                  'Hackathons & Tech Events'
+                ].map((ach) =>
+                  e('div', { key: ach, className: 'flex items-center gap-gutter-xs font-body text-body-md text-on-surface' },
+                    e('span', { className: 'material-symbols-outlined text-champagne-gold text-label-sm shrink-0' }, 'spark'),
+                    e('span', null, ach)
+                  )
+                )
+              )
+            ),
+
+            // PANEL 5: THE LIBRARY
+            e('article', { id: 'island-library', className: 'relative min-h-[380px] rounded-sm overflow-hidden flex flex-col justify-between p-gutter-lg' },
+              e('img', { src: 'https://lh3.googleusercontent.com/aida/ALJJyrBYEPTMiuUB10otmxxK71n4zYAZguz_nGuUK16TiTSfJUSN-z_FNoZ684fEpbaikGKT326mpEb7u3cf1lIS6jdY1d2EAtocudOeum_yJnzfJ6Thv5P9g2lBcsNaU-k6XcM_Pp0lDmS_r7rDTM3ucXZc-vXT__JMtYkZ6aGKr0Jfpk0srCXQm_u5938-zxldBipt9__zvrveAMUy64kBB1EGej35J8Y7OOknLqnW1wMw4MLjJ9bE4X_b', alt: 'Sunlit grand fantasy library', className: 'absolute inset-0 w-full h-full object-cover' }),
+              e('div', { className: 'panel-scrim absolute inset-0' }),
+              e('header', { className: 'relative z-10 ivory-card self-start px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/40 flex items-center gap-gutter-xs text-on-surface' },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md' }, 'menu_book'),
+                e('h2', { className: 'font-headline text-headline-sm' }, 'The Library')
+              ),
+              e('div', { className: 'relative z-10 ivory-card self-end w-full sm:w-72 p-gutter-lg rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-xs' },
+                e('h3', { className: 'font-headline text-title-md font-bold text-on-surface mb-gutter-xs' }, 'My Journey'),
+                e('div', { className: 'font-body text-body-md font-bold text-primary mb-gutter-xs' }, 'BCA – Cloud Computing (KJU, 2025 – 2028)'),
+                [
+                  'Cloud Computing',
+                  'Programming',
+                  'Computer Networks',
+                  'Linux',
+                  'Database Management'
+                ].map((topic) =>
+                  e('div', { key: topic, className: 'flex items-center gap-gutter-xs font-body text-body-md text-on-surface-variant' },
+                    e('span', { className: 'material-symbols-outlined text-champagne-gold text-label-sm' }, 'spark'),
+                    e('span', null, topic)
+                  )
+                )
+              )
+            ),
+
+            // PANEL 6: CONTACT PORTAL
+            e('article', { id: 'island-contact', className: 'relative min-h-[380px] rounded-sm overflow-hidden flex flex-col justify-between p-gutter-lg' },
+              e('img', { src: 'https://lh3.googleusercontent.com/aida/ALJJyrDPmU_hya0YyLW792yRmAIeqVAPoLaoY9o4F8b6589ywb1ugvMEGigibFtRKP3LSeML-MB7QrktwQMn-FCMpJmlvduu4hIgYDj5f-0PI6ZfvYtZ9j3Npy5WNDH45HPnudpcfiahga_OeK3IwpIpasxvA5KM1X9ZmEy-S0IX-Qgx5wEdSsZVABhZ5ceDyF3EduaVGyP21NWovGPovyI-6XVbY-bX5umkA-oArELm8gPem6qUh7o8fA1GymaHA1uiFg', alt: 'Luminous stone and gold archway portal', className: 'absolute inset-0 w-full h-full object-cover' }),
+              e('div', { className: 'panel-scrim absolute inset-0' }),
+              e('header', { className: 'relative z-10 ivory-card self-start px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/40 flex items-center gap-gutter-xs text-on-surface' },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md' }, 'auto_awesome'),
+                e('h2', { className: 'font-headline text-headline-sm' }, 'Contact Portal')
+              ),
+              e('div', { className: 'relative z-10 grid grid-cols-1 sm:grid-cols-2 gap-gutter-sm items-end' },
+                // Left social card
+                e('div', { className: 'ivory-card p-gutter-md rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-sm' },
+                  e('a', { href: 'https://www.linkedin.com/in/arjun-jayraj-cloud', target: '_blank', rel: 'noopener noreferrer', className: 'flex flex-col hover:text-primary' },
+                    e('span', { className: 'font-title text-body-md font-bold text-on-surface' }, 'LinkedIn'),
+                    e('span', { className: 'font-label text-label-sm text-on-surface-variant truncate' }, 'in/arjun-jayraj-cloud')
+                  ),
+                  e('a', { href: 'mailto:arjunarkmma@gmail.com', className: 'flex flex-col hover:text-primary' },
+                    e('span', { className: 'font-title text-body-md font-bold text-on-surface' }, 'Email'),
+                    e('span', { className: 'font-label text-label-sm text-on-surface-variant truncate' }, 'arjunarkmma@gmail.com')
+                  ),
+                  e('a', { href: 'tel:+919035299301', className: 'flex flex-col hover:text-primary' },
+                    e('span', { className: 'font-title text-body-md font-bold text-on-surface' }, 'Phone'),
+                    e('span', { className: 'font-label text-label-sm text-on-surface-variant tabular-nums' }, '+91 9035299301')
+                  )
+                ),
+                // Right Send a Message card
+                e('div', { className: 'ivory-card p-gutter-md rounded-md border border-champagne-gold/40 flex flex-col gap-gutter-xs' },
+                  e('h3', { className: 'font-headline text-body-lg font-bold text-on-surface' }, 'Send a Message'),
+                  msgSent
+                    ? e('p', { className: 'font-body text-body-md text-secondary py-gutter-sm' }, 'Thank you! Your message has been sent.')
+                    : e('form', {
+                        onSubmit: (ev) => { ev.preventDefault(); setMsgSent(true); },
+                        className: 'flex flex-col gap-gutter-xs'
+                      },
+                        e('input', { type: 'text', required: true, placeholder: 'Name', value: msgName, onChange: (ev) => setMsgName(ev.target.value), className: 'w-full px-gutter-sm py-gutter-xs rounded-sm bg-surface-container-low border border-outline-variant text-body-md' }),
+                        e('input', { type: 'email', required: true, placeholder: 'Email', value: msgEmail, onChange: (ev) => setMsgEmail(ev.target.value), className: 'w-full px-gutter-sm py-gutter-xs rounded-sm bg-surface-container-low border border-outline-variant text-body-md' }),
+                        e('textarea', { rows: 2, required: true, placeholder: 'Message', value: msgBody, onChange: (ev) => setMsgBody(ev.target.value), className: 'w-full px-gutter-sm py-gutter-xs rounded-sm bg-surface-container-low border border-outline-variant text-body-md' }),
+                        e('button', { type: 'submit', className: 'w-full py-gutter-xs rounded-full bg-primary text-on-primary font-label text-label-sm hover:bg-on-primary-container transition-colors inline-flex items-center justify-center gap-gutter-xs' },
+                          e('span', null, 'Send Message'),
+                          e('span', { className: 'material-symbols-outlined text-label-lg' }, 'arrow_forward')
+                        )
+                      )
+                )
+              )
+            )
+          ),
+
+          // -------------------------------------------------------------------
+          // 4. FOOTER
+          // -------------------------------------------------------------------
+          e('footer', { className: 'w-full bg-surface border-t border-outline-variant/40 px-gutter-lg sm:px-gutter-xl py-gutter-lg' },
+            e('div', { className: 'max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-gutter-md' },
+              e('div', { className: 'flex items-center gap-gutter-sm' },
+                e('a', { href: 'https://www.linkedin.com/in/arjun-jayraj-cloud', target: '_blank', rel: 'noopener noreferrer', 'aria-label': 'LinkedIn', className: 'w-8 h-8 rounded-full border border-outline-variant/60 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary' },
+                  e('span', { className: 'material-symbols-outlined text-body-md' }, 'person')
+                ),
+                e('a', { href: 'mailto:arjunarkmma@gmail.com', 'aria-label': 'Email', className: 'w-8 h-8 rounded-full border border-outline-variant/60 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary' },
+                  e('span', { className: 'material-symbols-outlined text-body-md' }, 'mail')
+                ),
+                e('a', { href: 'https://findkart-hackahon.netlify.app/', target: '_blank', rel: 'noopener noreferrer', 'aria-label': 'FindKart Live', className: 'w-8 h-8 rounded-full border border-outline-variant/60 flex items-center justify-center text-on-surface-variant hover:text-primary hover:border-primary' },
+                  e('span', { className: 'material-symbols-outlined text-body-md' }, 'link')
+                )
+              ),
+              e('div', { className: 'flex items-center gap-gutter-xs font-headline text-title-md tracking-widest uppercase text-on-surface' },
+                e('span', null, 'ARJUN JAYRAJ'),
+                e('span', { className: 'material-symbols-outlined text-champagne-gold text-body-lg', 'aria-hidden': 'true' }, 'spark')
+              ),
+              e('span', { className: 'font-label text-label-sm tracking-widest uppercase text-on-surface-variant' }, 'DREAM • LEARN • BUILD • GROW')
+            )
+          ),
+
+          // Modals
+          e(World3DModal, { open: worldModalOpen, onClose: () => setWorldModalOpen(false) }),
+          e(DetailModal, { modalType: detailModal, onClose: () => setDetailModal(null) })
+        );
+      }
+
+      const rootEl = document.getElementById('root');
+      if (rootEl && typeof ReactDOM !== 'undefined') {
+        ReactDOM.createRoot(rootEl).render(e(AetherSanctuaryApp));
+      }
+    })();
+  </script>
+
+
+</body></html>

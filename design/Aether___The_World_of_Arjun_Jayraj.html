@@ -1,0 +1,1975 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether — The World of Arjun Jayraj</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="fd517ce212bcef0a===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'warm-ivory': '#F8F5EF',
+        'powder-blue': '#DCE8F0',
+        'soft-lavender': '#DCD2E8',
+        'dusty-blush': '#EED8D0',
+        'sage-green': '#C7D9CF',
+        'champagne-gold': '#B99A65',
+        'primary': '#745A2C',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#FFEED8',
+        'on-primary-container': '#271900',
+        'secondary': '#3A4A43',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#D5E7DD',
+        'on-secondary-container': '#0F1F18',
+        'surface': '#F8F5EF',
+        'on-surface': '#1C1C18',
+        'surface-container-low': '#FEFCF9',
+        'surface-container': '#F3F0EA',
+        'surface-container-high': '#E5E2DC',
+        'on-surface-variant': '#474743',
+        'outline': '#787772',
+        'outline-variant': '#C9C6C1',
+        'error': '#BA1A1A',
+        'on-error': '#FFFFFF',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '16px',
+        'lg': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Crimson Pro"', 'sans-serif'],
+        'headline': ['"Crimson Pro"', 'sans-serif'],
+        'title': ['"Lato"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.5px', fontWeight: '500' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.25px', fontWeight: '500' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '0px', fontWeight: '600' }],
+        'headline-sm': ['24px', { lineHeight: '30px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['18px', { lineHeight: '24px', letterSpacing: '0.1px', fontWeight: '700' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0.15px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0.15px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.4px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '180ms',
+        'surface-enter': '320ms',
+        'surface-exit': '200ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&amp;family=Lato:wght@400;700&amp;family=Spline+Sans+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      background-color: #F8F5EF;
+    }
+    .aether-glass {
+      background: rgba(248, 245, 239, 0.80);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 20px 50px rgba(116, 90, 44, 0.09);
+    }
+    .aether-glass-strong {
+      background: rgba(254, 252, 249, 0.90);
+      backdrop-filter: blur(22px);
+      -webkit-backdrop-filter: blur(22px);
+      box-shadow: 0 24px 60px rgba(116, 90, 44, 0.12);
+    }
+    .sky-backdrop {
+      background: radial-gradient(circle at 50% 35%, #F8F5EF 0%, #DCE8F0 52%, #DCD2E8 100%);
+    }
+    @keyframes gentleFloat {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-6px); }
+    }
+    .animate-float-slow {
+      animation: gentleFloat 5s ease-in-out infinite;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .animate-float-slow {
+        animation: none !important;
+      }
+    }
+    /* Custom subtle scrollbar inside drawers */
+    .aether-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .aether-scroll::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    .aether-scroll::-webkit-scrollbar-thumb {
+      background: rgba(185, 154, 101, 0.35);
+      border-radius: 9999px;
+    }
+  </style>
+  <!-- Classic UMD scripts for file:// and sandboxed iframe compatibility -->
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js" crossorigin></script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+  <div id="root" class="relative min-h-screen w-full overflow-hidden sky-backdrop"></div>
+
+  <script>
+    (function () {
+      const e = React.createElement;
+      const { useState, useEffect, useRef, useCallback } = React;
+
+      // =========================================================================
+      // AUTHENTIC PORTFOLIO DATA (Arjun Jayraj — jayraj-folio-spark.lovable.app)
+      // =========================================================================
+      const ISLANDS = [
+        {
+          id: 'home',
+          number: '01',
+          name: 'The Home',
+          subtitle: 'Central Sanctuary & Profile',
+          icon: 'castle',
+          accentClass: 'bg-primary-container text-on-primary-container',
+          position: [0, 0, 0],
+          cameraPos: [0, 6.2, 12.5],
+          cameraTarget: [0, 1.4, 0],
+          summary: 'A central ivory sanctuary suspended above the clouds—home to Arjun Jayraj’s journey as a Cloud Computing Student, Web Developer, and Aspiring DevOps Engineer.'
+        },
+        {
+          id: 'garden',
+          number: '02',
+          name: 'The Knowledge Garden',
+          subtitle: 'Floating Skills & Cloud Craft',
+          icon: 'park',
+          accentClass: 'bg-secondary-container text-on-secondary-container',
+          position: [-14, 0.8, -6],
+          cameraPos: [-14, 6.4, 4.5],
+          cameraTarget: [-14, 1.8, -6],
+          summary: 'A living sky terrace where core cloud, DevOps, and software engineering disciplines orbit like luminous crystals.'
+        },
+        {
+          id: 'gallery',
+          number: '03',
+          name: 'The Project Gallery',
+          subtitle: 'Glass Museum of Creations',
+          icon: 'museum',
+          accentClass: 'bg-powder-blue text-on-surface',
+          position: [14, 1.1, -6],
+          cameraPos: [14, 6.5, 4.5],
+          cameraTarget: [14, 2.0, -6],
+          summary: 'A translucent crystal pavilion housing holographic showcases of CareerPilot AI, FindCart, and cloud-native web applications.'
+        },
+        {
+          id: 'achievements',
+          number: '04',
+          name: 'The Hall of Achievements',
+          subtitle: 'NCC, Sports & Recognitions',
+          icon: 'military_tech',
+          accentClass: 'bg-dusty-blush text-on-surface',
+          position: [-12.5, 0.4, 9.5],
+          cameraPos: [-12.5, 5.8, 19.5],
+          cameraTarget: [-12.5, 1.5, 9.5],
+          summary: 'A grand colonnade honoring discipline, leadership, athletics, hackathons, and client trust earned along the way.'
+        },
+        {
+          id: 'library',
+          number: '05',
+          name: 'The Library',
+          subtitle: 'Education & Career Horizon',
+          icon: 'menu_book',
+          accentClass: 'bg-soft-lavender text-on-surface',
+          position: [12.5, 0.6, 9.5],
+          cameraPos: [12.5, 6.0, 19.5],
+          cameraTarget: [12.5, 1.6, 9.5],
+          summary: 'An elevated architectural rotunda dedicated to continuous learning, cloud systems study, and DevOps engineering aspirations.'
+        },
+        {
+          id: 'contact',
+          number: '06',
+          name: 'The Contact Portal',
+          subtitle: 'Gateway to Collaborate',
+          icon: 'auto_awesome',
+          accentClass: 'bg-primary-container text-on-primary-container',
+          position: [0, 1.2, 16.5],
+          cameraPos: [0, 5.8, 26.0],
+          cameraTarget: [0, 2.2, 16.5],
+          summary: 'A luminous champagne-gold archway opening direct channels to collaborate on cloud, DevOps, and web projects.'
+        }
+      ];
+
+      const OVERVIEW_CAMERA = {
+        pos: [0, 20, 38],
+        target: [0, 0.5, 3]
+      };
+
+      const INTRO_CAMERA = {
+        pos: [0, 9.5, 25],
+        target: [0, 1.8, 0]
+      };
+
+      const SKILLS_ORBIT = [
+        { name: 'AWS', category: 'Cloud Platform' },
+        { name: 'Linux', category: 'Systems & Shell' },
+        { name: 'Docker', category: 'Containers' },
+        { name: 'Python', category: 'Automation' },
+        { name: 'Git', category: 'Version Control' },
+        { name: 'Networking', category: 'Infrastructure' },
+        { name: 'SQL', category: 'Databases' },
+        { name: 'Cloud Computing', category: 'Architecture' }
+      ];
+
+      const EXPERTISE_BARS = [
+        { label: 'HTML / CSS', pct: 95 },
+        { label: 'JavaScript', pct: 90 },
+        { label: 'React / Next.js', pct: 88 },
+        { label: 'AWS / Cloud', pct: 85 },
+        { label: 'UI / UX Design', pct: 82 },
+        { label: 'DevOps / CI/CD', pct: 78 }
+      ];
+
+      const PROJECTS = [
+        {
+          id: 'careerpilot',
+          title: 'CareerPilot AI',
+          category: 'AI & Cloud Architecture',
+          featured: true,
+          stack: ['React', 'Cloud APIs', 'AI Guidance', 'AWS'],
+          description: 'Intelligent career navigation platform pairing AI-driven guidance with scalable cloud architecture and a serene user interface.',
+          architecture: 'Built with a modular React frontend, serverless cloud endpoints, and structured prompt orchestration for personalized learning roadmaps.',
+          highlights: [
+            'AI-assisted skill gap mapping and role recommendations',
+            'Responsive, distraction-free editorial interface',
+            'Cloud-native deployment ready for high concurrency'
+          ]
+        },
+        {
+          id: 'findcart',
+          title: 'FindKart (FindCart)',
+          category: 'Smart Commerce Web App',
+          featured: true,
+          liveUrl: 'https://findkart-hackahon.netlify.app/',
+          stack: ['React', 'JavaScript', 'Tailwind CSS', 'Netlify'],
+          description: 'Smart everyday shopping across India—electronics, fashion, home essentials, and curated daily deals delivered fast with Cash on Delivery.',
+          architecture: 'Hackathon-built e-commerce web app featuring 256-bit encrypted authentication, saved addresses, order management, and a fast responsive cart.',
+          highlights: [
+            '100% Genuine verified sellers & Cash on Delivery at doorstep',
+            'Fast dispatch coverage across 19,000+ pin codes',
+            'Secure sign-in, saved addresses, and persistent cart'
+          ]
+        },
+        {
+          id: 'ecommerce',
+          title: 'E-Commerce Platform',
+          category: 'Web Development',
+          featured: false,
+          stack: ['HTML/CSS', 'JavaScript', 'React', 'SQL'],
+          description: 'Responsive full-stack storefront built with modern web technologies, clean product merchandising, and high-performance rendering.',
+          architecture: 'Structured storefront architecture with clean state management and relational catalog modeling.',
+          highlights: [
+            'Conversion-focused product detail pages',
+            'Accessible navigation and checkout clarity'
+          ]
+        },
+        {
+          id: 'cloud-migration',
+          title: 'Cloud Migration',
+          category: 'Cloud Solutions',
+          featured: false,
+          stack: ['AWS', 'Azure', 'Linux', 'Networking'],
+          description: 'Scalable infrastructure migration onto AWS and Azure, optimizing reliability, security posture, and operational cost-efficiency.',
+          architecture: 'Multi-tier VPC networking, automated instance provisioning, and monitored backup/recovery workflows.',
+          highlights: [
+            'Completed on schedule and within budget',
+            'Improved uptime and infrastructure resilience'
+          ]
+        },
+        {
+          id: 'dashboard-analytics',
+          title: 'Dashboard Analytics',
+          category: 'Web App',
+          featured: false,
+          stack: ['React', 'Next.js', 'SQL', 'UI/UX'],
+          description: 'Interactive telemetry and business analytics interface turning complex metrics into clear, actionable visual views.',
+          architecture: 'Modular data visualization grid with clean typographic hierarchy and tabular numeric alignment.',
+          highlights: [
+            'At-a-glance KPI summaries and trend views',
+            'Responsive across desktop and tablet'
+          ]
+        },
+        {
+          id: 'mobile-brand',
+          title: 'Mobile App UI & Brand Identity',
+          category: 'UI/UX Design',
+          featured: false,
+          stack: ['UI/UX Design', 'Design Systems', 'Prototyping'],
+          description: 'Human-centered mobile interface systems and cohesive visual identities crafted for usability and accessibility.',
+          architecture: 'Tokenized color, typography, and spacing systems ensuring visual harmony across every screen.',
+          highlights: [
+            'Accessible contrast and clear touch targets',
+            'Cohesive brand voice and visual language'
+          ]
+        },
+        {
+          id: 'portfolio-website',
+          title: 'Portfolio Website',
+          category: 'Web Development',
+          featured: false,
+          liveUrl: 'https://jayraj-folio-spark.lovable.app/',
+          stack: ['React', 'Three.js', 'Tailwind CSS', 'UI/UX'],
+          description: 'Personal portfolio showcasing cloud engineering, DevOps automation, and modern web craftsmanship.',
+          architecture: 'Evolved from a clean editorial web portfolio into Aether—an interactive 3D floating island sanctuary.',
+          highlights: [
+            'Authentic bio, skills, projects, and client testimonials',
+            'Responsive across desktop, tablet, and mobile'
+          ]
+        }
+      ];
+
+      const ACHIEVEMENTS = [
+        {
+          title: 'NCC Journey',
+          tag: 'Leadership & Discipline',
+          description: 'National Cadet Corps training instilling resilience, teamwork, ceremonial discipline, and community leadership.'
+        },
+        {
+          title: 'Sports Achievements',
+          tag: 'Athletics & Spirit',
+          description: 'Active competitive participation in athletics and team sports, building endurance and composure under pressure.'
+        },
+        {
+          title: 'Hackathons & Recognitions',
+          tag: 'Innovation',
+          description: 'Hands-on problem solving in technical hackathons—prototyping cloud-native and AI-assisted applications under tight timelines.'
+        }
+      ];
+
+      const TESTIMONIALS = [
+        {
+          quote: 'Delivered exceptional work on our cloud migration project. His expertise and professionalism exceeded our expectations. The project was completed on time and within budget.',
+          author: 'Sarah Johnson',
+          role: 'CEO, TechStart'
+        },
+        {
+          quote: 'The website built for us increased our conversions by 150%. The attention to detail and understanding of user experience is remarkable.',
+          author: 'Michael Chen',
+          role: 'Product Manager, InnovateCo'
+        },
+        {
+          quote: 'Working together was a pleasure. He understood our vision and brought it to life beautifully. The creative approach combined with technical skills is truly impressive.',
+          author: 'Emily Davis',
+          role: 'Creative Director, DesignHub'
+        }
+      ];
+
+      // =========================================================================
+      // 3D WORLD COMPONENT (Three.js + OrbitControls + Interactive Raycasting)
+      // =========================================================================
+      function AetherWorldCanvas(props) {
+        const {
+          entered,
+          activeIslandId,
+          onSelectIsland,
+          reducedMotion,
+          onSceneReady,
+          onHoverIsland
+        } = props;
+
+        const mountRef = useRef(null);
+        const stateRef = useRef({
+          entered: false,
+          activeIslandId: null,
+          reducedMotion: false,
+          cameraAnim: null,
+          hoveredId: null
+        });
+
+        stateRef.current.entered = entered;
+        stateRef.current.activeIslandId = activeIslandId;
+        stateRef.current.reducedMotion = reducedMotion;
+
+        // Trigger smooth camera flight when activeIslandId or entered changes
+        useEffect(() => {
+          const st = stateRef.current;
+          if (!st.camera || !st.controls) return;
+
+          let targetPos, targetLook;
+          if (!entered) {
+            targetPos = INTRO_CAMERA.pos;
+            targetLook = INTRO_CAMERA.target;
+          } else if (activeIslandId) {
+            const isl = ISLANDS.find(i => i.id === activeIslandId);
+            if (isl) {
+              targetPos = isl.cameraPos;
+              targetLook = isl.cameraTarget;
+            }
+          } else {
+            targetPos = OVERVIEW_CAMERA.pos;
+            targetLook = OVERVIEW_CAMERA.target;
+          }
+
+          if (targetPos && targetLook) {
+            if (reducedMotion) {
+              st.camera.position.set(targetPos[0], targetPos[1], targetPos[2]);
+              st.controls.target.set(targetLook[0], targetLook[1], targetLook[2]);
+              st.controls.update();
+              st.cameraAnim = null;
+            } else {
+              st.cameraAnim = {
+                startPos: st.camera.position.clone(),
+                endPos: new THREE.Vector3(targetPos[0], targetPos[1], targetPos[2]),
+                startLook: st.controls.target.clone(),
+                endLook: new THREE.Vector3(targetLook[0], targetLook[1], targetLook[2]),
+                progress: 0,
+                duration: 1.45
+              };
+            }
+          }
+        }, [entered, activeIslandId, reducedMotion]);
+
+        useEffect(() => {
+          const container = mountRef.current;
+          if (!container || typeof THREE === 'undefined') {
+            onSceneReady();
+            return;
+          }
+
+          let renderer, scene, camera, controls, frameId;
+          try {
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color('#E8EFF4');
+            scene.fog = new THREE.FogExp2('#EAE6E1', 0.0115);
+
+            const width = container.clientWidth || window.innerWidth;
+            const height = container.clientHeight || window.innerHeight;
+
+            camera = new THREE.PerspectiveCamera(44, width / height, 0.1, 220);
+            camera.position.set(INTRO_CAMERA.pos[0], INTRO_CAMERA.pos[1], INTRO_CAMERA.pos[2]);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: 'high-performance' });
+            renderer.setSize(width, height);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            renderer.shadowMap.enabled = true;
+            renderer.shadowMap.type = THREE.PCFSoftShadowMap;
+            renderer.toneMapping = THREE.ACESFilmicToneMapping;
+            renderer.toneMappingExposure = 1.08;
+            container.appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.055;
+            controls.maxPolarAngle = Math.PI * 0.49;
+            controls.minPolarAngle = 0.2;
+            controls.minDistance = 6;
+            controls.maxDistance = 62;
+            controls.target.set(INTRO_CAMERA.target[0], INTRO_CAMERA.target[1], INTRO_CAMERA.target[2]);
+            controls.update();
+
+            stateRef.current.camera = camera;
+            stateRef.current.controls = controls;
+
+            // -----------------------------------------------------------------
+            // LIGHTING (Soft Pastel Sun + Sky Hemisphere + Gold Accents)
+            // -----------------------------------------------------------------
+            const hemiLight = new THREE.HemisphereLight('#F8F5EF', '#EED8D0', 1.15);
+            hemiLight.position.set(0, 40, 0);
+            scene.add(hemiLight);
+
+            const sunLight = new THREE.DirectionalLight('#FFF5E4', 1.35);
+            sunLight.position.set(24, 38, 22);
+            sunLight.castShadow = true;
+            sunLight.shadow.mapSize.width = 2048;
+            sunLight.shadow.mapSize.height = 2048;
+            sunLight.shadow.camera.near = 5;
+            sunLight.shadow.camera.far = 110;
+            const d = 34;
+            sunLight.shadow.camera.left = -d;
+            sunLight.shadow.camera.right = d;
+            sunLight.shadow.camera.top = d;
+            sunLight.shadow.camera.bottom = -d;
+            sunLight.shadow.bias = -0.0005;
+            scene.add(sunLight);
+
+            const fillLight = new THREE.DirectionalLight('#DCE8F0', 0.55);
+            fillLight.position.set(-22, 16, -18);
+            scene.add(fillLight);
+
+            // -----------------------------------------------------------------
+            // MATERIALS
+            // -----------------------------------------------------------------
+            const matIvory = new THREE.MeshStandardMaterial({ color: '#F8F5EF', roughness: 0.55, metalness: 0.05 });
+            const matLimestone = new THREE.MeshStandardMaterial({ color: '#E8DFD3', roughness: 0.85, metalness: 0.02, flatShading: true });
+            const matSage = new THREE.MeshStandardMaterial({ color: '#C7D9CF', roughness: 0.78, metalness: 0.02 });
+            const matLavender = new THREE.MeshStandardMaterial({ color: '#DCD2E8', roughness: 0.72, metalness: 0.04 });
+            const matBlush = new THREE.MeshStandardMaterial({ color: '#EED8D0', roughness: 0.72, metalness: 0.04 });
+            const matGold = new THREE.MeshStandardMaterial({ color: '#B99A65', roughness: 0.28, metalness: 0.78 });
+            const matWater = new THREE.MeshPhysicalMaterial({
+              color: '#B8D8E8',
+              roughness: 0.12,
+              metalness: 0.05,
+              transmission: 0.45,
+              transparent: true,
+              opacity: 0.86
+            });
+            const matGlass = new THREE.MeshPhysicalMaterial({
+              color: '#DCE8F0',
+              roughness: 0.08,
+              metalness: 0.1,
+              transparent: true,
+              opacity: 0.52
+            });
+            const matCloud = new THREE.MeshStandardMaterial({
+              color: '#FCF9F4',
+              roughness: 0.95,
+              metalness: 0.0,
+              transparent: true,
+              opacity: 0.88
+            });
+
+            // -----------------------------------------------------------------
+            // HELPER: Build Floating Island Base
+            // -----------------------------------------------------------------
+            const clickableMeshes = [];
+            const islandGroups = {};
+            const floatingOrbs = [];
+            const waterfallDrops = [];
+
+            // Glowing champagne-gold selection halo ring for active/hovered island
+            const ringGeo = new THREE.RingGeometry(5.9, 6.25, 48);
+            const ringMat = new THREE.MeshBasicMaterial({
+              color: '#B99A65',
+              side: THREE.DoubleSide,
+              transparent: true,
+              opacity: 0.0
+            });
+            const selectionRing = new THREE.Mesh(ringGeo, ringMat);
+            selectionRing.rotation.x = -Math.PI / 2;
+            selectionRing.position.y = 0.6;
+            scene.add(selectionRing);
+            stateRef.current.selectionRing = selectionRing;
+            stateRef.current.islandGroups = islandGroups;
+
+            function createIslandBase(id, pos, radius, topMat) {
+              const group = new THREE.Group();
+              group.position.set(pos[0], pos[1], pos[2]);
+              group.userData = { islandId: id, baseY: pos[1] };
+
+              // Top lush terrace
+              const topGeo = new THREE.CylinderGeometry(radius, radius * 0.92, 0.85, 16);
+              const topMesh = new THREE.Mesh(topGeo, topMat);
+              topMesh.receiveShadow = true;
+              topMesh.castShadow = true;
+              topMesh.userData = { islandId: id };
+              group.add(topMesh);
+              clickableMeshes.push(topMesh);
+
+              // Ivory rim
+              const rimGeo = new THREE.TorusGeometry(radius * 0.96, 0.12, 8, 32);
+              const rimMesh = new THREE.Mesh(rimGeo, matIvory);
+              rimMesh.rotation.x = Math.PI / 2;
+              rimMesh.position.y = 0.36;
+              group.add(rimMesh);
+
+              // Faceted floating rock underside
+              const rockGeo = new THREE.ConeGeometry(radius * 0.9, radius * 1.35, 11);
+              const rockMesh = new THREE.Mesh(rockGeo, matLimestone);
+              rockMesh.rotation.x = Math.PI;
+              rockMesh.position.y = -(radius * 0.68 + 0.35);
+              rockMesh.castShadow = true;
+              rockMesh.userData = { islandId: id };
+              group.add(rockMesh);
+              clickableMeshes.push(rockMesh);
+
+              // Subtle floating crystal under island
+              const crystalGeo = new THREE.OctahedronGeometry(0.55, 0);
+              const crystal = new THREE.Mesh(crystalGeo, matGold);
+              crystal.position.y = -(radius * 1.45 + 0.6);
+              group.add(crystal);
+              floatingOrbs.push({ mesh: crystal, baseY: crystal.position.y, speed: 1.4, phase: Math.random() * 6 });
+
+              scene.add(group);
+              islandGroups[id] = group;
+              return group;
+            }
+
+            // -----------------------------------------------------------------
+            // 1. THE HOME (Central Sanctuary + Castle + Waterfall + Pool)
+            // -----------------------------------------------------------------
+            const homeGroup = createIslandBase('home', [0, 0, 0], 5.8, matSage);
+
+            // Central ivory pavilion / castle keep
+            const keepBase = new THREE.Mesh(new THREE.CylinderGeometry(2.3, 2.6, 2.2, 8), matIvory);
+            keepBase.position.set(0, 1.4, -0.6);
+            keepBase.castShadow = true;
+            keepBase.receiveShadow = true;
+            keepBase.userData = { islandId: 'home' };
+            homeGroup.add(keepBase);
+            clickableMeshes.push(keepBase);
+
+            // Glass atrium dome
+            const dome = new THREE.Mesh(new THREE.SphereGeometry(1.75, 24, 16, 0, Math.PI * 2, 0, Math.PI / 2), matGlass);
+            dome.position.set(0, 2.5, -0.6);
+            homeGroup.add(dome);
+
+            // Gold finial spire
+            const spire = new THREE.Mesh(new THREE.ConeGeometry(0.18, 1.4, 8), matGold);
+            spire.position.set(0, 4.7, -0.6);
+            homeGroup.add(spire);
+
+            // Flanking fantasy towers
+            [[-2.4, 0.2], [2.4, 0.2]].forEach(([tx, tz]) => {
+              const tower = new THREE.Mesh(new THREE.CylinderGeometry(0.65, 0.78, 3.0, 10), matIvory);
+              tower.position.set(tx, 1.8, tz);
+              tower.castShadow = true;
+              homeGroup.add(tower);
+              const roof = new THREE.Mesh(new THREE.ConeGeometry(0.82, 1.3, 10), matBlush);
+              roof.position.set(tx, 3.85, tz);
+              roof.castShadow = true;
+              homeGroup.add(roof);
+            });
+
+            // Reflective pool
+            const pool = new THREE.Mesh(new THREE.CylinderGeometry(2.1, 2.1, 0.16, 24), matWater);
+            pool.position.set(0, 0.44, 2.3);
+            homeGroup.add(pool);
+
+            // Flowing waterfall cascading off front-right edge
+            for (let w = 0; w < 14; w++) {
+              const drop = new THREE.Mesh(new THREE.SphereGeometry(0.22 + (w % 3) * 0.06, 8, 8), matWater);
+              drop.position.set(1.6 + (Math.random() - 0.5) * 0.6, 0.3 - w * 0.45, 4.9 + (Math.random() - 0.5) * 0.25);
+              homeGroup.add(drop);
+              waterfallDrops.push({ mesh: drop, startY: 0.35, minY: -5.8, speed: 2.2 + Math.random() * 0.8 });
+            }
+
+            // -----------------------------------------------------------------
+            // 2. THE KNOWLEDGE GARDEN (Trees, Flowers & 8 Orbiting Skill Crystals)
+            // -----------------------------------------------------------------
+            const gardenGroup = createIslandBase('garden', [-14, 0.8, -6], 4.6, matSage);
+
+            // Stylized pastel fantasy trees
+            [[-1.6, -1.2, 1.2], [1.8, -1.0, 1.0], [0.2, -2.0, 1.4]].forEach(([tx, tz, sc]) => {
+              const trunk = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.22, 1.6 * sc, 7), matLimestone);
+              trunk.position.set(tx, 0.4 + 0.8 * sc, tz);
+              trunk.castShadow = true;
+              gardenGroup.add(trunk);
+              const foliage = new THREE.Mesh(new THREE.IcosahedronGeometry(0.95 * sc, 1), tx < 0 ? matBlush : matLavender);
+              foliage.position.set(tx, 0.4 + 1.85 * sc, tz);
+              foliage.castShadow = true;
+              gardenGroup.add(foliage);
+            });
+
+            // 8 orbiting skill crystals (AWS, Linux, Docker, Python, Git, Networking, SQL, Cloud)
+            const skillMats = [matGold, matGlass, matLavender, matBlush];
+            for (let i = 0; i < 8; i++) {
+              const angle = (i / 8) * Math.PI * 2;
+              const r = 3.1;
+              const crystal = new THREE.Mesh(new THREE.OctahedronGeometry(0.36, 0), skillMats[i % skillMats.length]);
+              crystal.position.set(Math.cos(angle) * r, 2.2 + (i % 2) * 0.5, Math.sin(angle) * r);
+              crystal.castShadow = true;
+              crystal.userData = { islandId: 'garden' };
+              gardenGroup.add(crystal);
+              floatingOrbs.push({ mesh: crystal, baseY: crystal.position.y, speed: 1.6, phase: i * 0.8, orbitAngle: angle, orbitRadius: r, parentGroup: gardenGroup });
+            }
+
+            // -----------------------------------------------------------------
+            // 3. THE PROJECT GALLERY (Floating Glass Museum & Holographic Displays)
+            // -----------------------------------------------------------------
+            const galleryGroup = createIslandBase('gallery', [14, 1.1, -6], 4.8, matIvory);
+
+            // Glass museum pavilion
+            const glassBox = new THREE.Mesh(new THREE.CylinderGeometry(2.8, 3.0, 2.5, 6), matGlass);
+            glassBox.position.set(0, 1.65, 0);
+            glassBox.userData = { islandId: 'gallery' };
+            galleryGroup.add(glassBox);
+            clickableMeshes.push(glassBox);
+
+            // Champagne gold roof ring
+            const roofRing = new THREE.Mesh(new THREE.TorusGeometry(2.85, 0.14, 10, 24), matGold);
+            roofRing.rotation.x = Math.PI / 2;
+            roofRing.position.set(0, 2.95, 0);
+            galleryGroup.add(roofRing);
+
+            // Floating holographic project prisms
+            for (let p = 0; p < 4; p++) {
+              const ang = (p / 4) * Math.PI * 2 + 0.4;
+              const holo = new THREE.Mesh(new THREE.BoxGeometry(0.65, 0.95, 0.12), matGlass);
+              holo.position.set(Math.cos(ang) * 1.6, 1.6, Math.sin(ang) * 1.6);
+              holo.lookAt(0, 1.6, 0);
+              galleryGroup.add(holo);
+              floatingOrbs.push({ mesh: holo, baseY: 1.6, speed: 1.3, phase: p * 1.4 });
+            }
+
+            // -----------------------------------------------------------------
+            // 4. THE HALL OF ACHIEVEMENTS (Grand Colonnade & Golden Laurel)
+            // -----------------------------------------------------------------
+            const achGroup = createIslandBase('achievements', [-12.5, 0.4, 9.5], 4.4, matBlush);
+
+            // Classical columns in a circle
+            for (let c = 0; c < 6; c++) {
+              const ang = (c / 6) * Math.PI * 2;
+              const col = new THREE.Mesh(new THREE.CylinderGeometry(0.22, 0.26, 2.5, 10), matIvory);
+              col.position.set(Math.cos(ang) * 2.2, 1.65, Math.sin(ang) * 2.2);
+              col.castShadow = true;
+              achGroup.add(col);
+            }
+            const achCrown = new THREE.Mesh(new THREE.CylinderGeometry(2.5, 2.5, 0.35, 16), matIvory);
+            achCrown.position.set(0, 3.0, 0);
+            achCrown.castShadow = true;
+            achGroup.add(achCrown);
+
+            const trophy = new THREE.Mesh(new THREE.OctahedronGeometry(0.65, 1), matGold);
+            trophy.position.set(0, 1.7, 0);
+            achGroup.add(trophy);
+            floatingOrbs.push({ mesh: trophy, baseY: 1.7, speed: 1.5, phase: 0.5 });
+
+            // -----------------------------------------------------------------
+            // 5. THE LIBRARY (Tiered Rotunda & Floating Lanterns)
+            // -----------------------------------------------------------------
+            const libGroup = createIslandBase('library', [12.5, 0.6, 9.5], 4.4, matLavender);
+
+            const libTier1 = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.5, 1.5, 12), matIvory);
+            libTier1.position.set(0, 1.15, 0);
+            libTier1.castShadow = true;
+            libTier1.userData = { islandId: 'library' };
+            libGroup.add(libTier1);
+            clickableMeshes.push(libTier1);
+
+            const libTier2 = new THREE.Mesh(new THREE.CylinderGeometry(1.4, 1.6, 1.4, 12), matIvory);
+            libTier2.position.set(0, 2.5, 0);
+            libTier2.castShadow = true;
+            libGroup.add(libTier2);
+
+            const libRoof = new THREE.Mesh(new THREE.ConeGeometry(1.75, 1.5, 12), matGold);
+            libRoof.position.set(0, 3.9, 0);
+            libRoof.castShadow = true;
+            libGroup.add(libRoof);
+
+            // -----------------------------------------------------------------
+            // 6. THE CONTACT PORTAL (Glowing Champagne-Gold Archway)
+            // -----------------------------------------------------------------
+            const portalGroup = createIslandBase('contact', [0, 1.2, 16.5], 4.2, matIvory);
+
+            const arch = new THREE.Mesh(new THREE.TorusGeometry(1.9, 0.24, 14, 36, Math.PI), matGold);
+            arch.position.set(0, 1.9, 0);
+            arch.castShadow = true;
+            arch.userData = { islandId: 'contact' };
+            portalGroup.add(arch);
+            clickableMeshes.push(arch);
+
+            // Portal pillars
+            [[-1.9, 0], [1.9, 0]].forEach(([px, pz]) => {
+              const pillar = new THREE.Mesh(new THREE.CylinderGeometry(0.28, 0.34, 1.6, 10), matIvory);
+              pillar.position.set(px, 1.15, pz);
+              pillar.castShadow = true;
+              portalGroup.add(pillar);
+            });
+
+            // Glowing portal veil
+            const portalVeil = new THREE.Mesh(new THREE.CircleGeometry(1.7, 32), matGlass);
+            portalVeil.position.set(0, 1.9, 0);
+            portalGroup.add(portalVeil);
+
+            // -----------------------------------------------------------------
+            // ELEGANT BRIDGES CONNECTING THE HOME TO ISLANDS
+            // -----------------------------------------------------------------
+            function createBridge(p1, p2) {
+              const v1 = new THREE.Vector3(p1[0], p1[1] + 0.35, p1[2]);
+              const v2 = new THREE.Vector3(p2[0], p2[1] + 0.35, p2[2]);
+              const mid = v1.clone().add(v2).multiplyScalar(0.5);
+              mid.y += 1.4;
+              const curve = new THREE.QuadraticBezierCurve3(v1, mid, v2);
+              const bridgeGeo = new THREE.TubeGeometry(curve, 20, 0.24, 6, false);
+              const bridge = new THREE.Mesh(bridgeGeo, matIvory);
+              bridge.scale.set(1, 0.35, 1);
+              bridge.castShadow = true;
+              scene.add(bridge);
+            }
+
+            createBridge([0, 0, 0], [-14, 0.8, -6]);
+            createBridge([0, 0, 0], [14, 1.1, -6]);
+            createBridge([0, 0, 0], [-12.5, 0.4, 9.5]);
+            createBridge([0, 0, 0], [12.5, 0.6, 9.5]);
+            createBridge([0, 0, 0], [0, 1.2, 16.5]);
+
+            // -----------------------------------------------------------------
+            // SOFT DRIFTING CLOUDS
+            // -----------------------------------------------------------------
+            const clouds = [];
+            for (let i = 0; i < 28; i++) {
+              const cloudCluster = new THREE.Group();
+              const puffs = 3 + (i % 3);
+              for (let k = 0; k < puffs; k++) {
+                const puff = new THREE.Mesh(
+                  new THREE.SphereGeometry(1.6 + Math.random() * 1.8, 12, 10),
+                  matCloud
+                );
+                puff.position.set((k - 1) * 1.8, (Math.random() - 0.5) * 0.6, (Math.random() - 0.5) * 1.2);
+                puff.scale.y = 0.55;
+                cloudCluster.add(puff);
+              }
+              const angle = Math.random() * Math.PI * 2;
+              const dist = 12 + Math.random() * 34;
+              cloudCluster.position.set(
+                Math.cos(angle) * dist,
+                -6.5 + Math.random() * 5.0,
+                Math.sin(angle) * dist
+              );
+              scene.add(cloudCluster);
+              clouds.push({ group: cloudCluster, speed: 0.15 + Math.random() * 0.22 });
+            }
+
+            // -----------------------------------------------------------------
+            // FLOATING GOLDEN PARTICLES & BIRDS
+            // -----------------------------------------------------------------
+            const particleCount = 160;
+            const particleGeo = new THREE.BufferGeometry();
+            const particlePos = new Float32Array(particleCount * 3);
+            for (let i = 0; i < particleCount; i++) {
+              particlePos[i * 3] = (Math.random() - 0.5) * 56;
+              particlePos[i * 3 + 1] = -3 + Math.random() * 18;
+              particlePos[i * 3 + 2] = (Math.random() - 0.5) * 56;
+            }
+            particleGeo.setAttribute('position', new THREE.BufferAttribute(particlePos, 3));
+            const particleMat = new THREE.PointsMaterial({
+              color: '#B99A65',
+              size: 0.22,
+              transparent: true,
+              opacity: 0.65
+            });
+            const particles = new THREE.Points(particleGeo, particleMat);
+            scene.add(particles);
+
+            // Sky Birds
+            const birds = [];
+            for (let b = 0; b < 7; b++) {
+              const bird = new THREE.Group();
+              const wingGeo = new THREE.BoxGeometry(0.55, 0.04, 0.16);
+              const leftWing = new THREE.Mesh(wingGeo, matIvory);
+              leftWing.position.x = -0.28;
+              const rightWing = new THREE.Mesh(wingGeo, matIvory);
+              rightWing.position.x = 0.28;
+              bird.add(leftWing);
+              bird.add(rightWing);
+              const r = 10 + b * 2.5;
+              const a = b * 1.1;
+              bird.position.set(Math.cos(a) * r, 7 + (b % 3) * 1.5, Math.sin(a) * r);
+              scene.add(bird);
+              birds.push({ group: bird, leftWing, rightWing, radius: r, angle: a, speed: 0.16 + (b % 3) * 0.04, yBase: bird.position.y });
+            }
+
+            // -----------------------------------------------------------------
+            // RAYCASTER FOR CLICKING & HOVERING ISLANDS
+            // -----------------------------------------------------------------
+            const raycaster = new THREE.Raycaster();
+            const pointer = new THREE.Vector2();
+            let downPos = { x: 0, y: 0 };
+
+            function getPointerIntersection(clientX, clientY) {
+              const rect = renderer.domElement.getBoundingClientRect();
+              pointer.x = ((clientX - rect.left) / rect.width) * 2 - 1;
+              pointer.y = -((clientY - rect.top) / rect.height) * 2 + 1;
+              raycaster.setFromCamera(pointer, camera);
+              const hits = raycaster.intersectObjects(clickableMeshes, false);
+              if (hits.length > 0 && hits[0].object.userData && hits[0].object.userData.islandId) {
+                return hits[0].object.userData.islandId;
+              }
+              return null;
+            }
+
+            const onPointerDown = (ev) => {
+              downPos = { x: ev.clientX, y: ev.clientY };
+            };
+
+            const onPointerMove = (ev) => {
+              if (!stateRef.current.entered) return;
+              const hitId = getPointerIntersection(ev.clientX, ev.clientY);
+              renderer.domElement.style.cursor = hitId ? 'pointer' : 'grab';
+              if (stateRef.current.hoveredId !== hitId) {
+                stateRef.current.hoveredId = hitId;
+                onHoverIsland(hitId);
+              }
+            };
+
+            const onPointerUp = (ev) => {
+              if (!stateRef.current.entered) return;
+              const dx = ev.clientX - downPos.x;
+              const dy = ev.clientY - downPos.y;
+              if (Math.hypot(dx, dy) < 6) {
+                const hitId = getPointerIntersection(ev.clientX, ev.clientY);
+                if (hitId) {
+                  onSelectIsland(hitId);
+                }
+              }
+            };
+
+            renderer.domElement.addEventListener('pointerdown', onPointerDown);
+            renderer.domElement.addEventListener('pointermove', onPointerMove);
+            renderer.domElement.addEventListener('pointerup', onPointerUp);
+
+            // Resize handler
+            const onResize = () => {
+              if (!container) return;
+              const w = container.clientWidth || window.innerWidth;
+              const h = container.clientHeight || window.innerHeight;
+              camera.aspect = w / h;
+              camera.updateProjectionMatrix();
+              renderer.setSize(w, h);
+            };
+            window.addEventListener('resize', onResize);
+
+            // Signal ready
+            onSceneReady();
+
+            // -----------------------------------------------------------------
+            // ANIMATION LOOP
+            // -----------------------------------------------------------------
+            const clock = new THREE.Clock();
+            function animate() {
+              frameId = requestAnimationFrame(animate);
+              const dt = Math.min(clock.getDelta(), 0.05);
+              const elapsed = clock.getElapsedTime();
+              const rm = stateRef.current.reducedMotion;
+
+              // Camera intro slow drift before entering
+              if (!stateRef.current.entered && !rm) {
+                const angle = elapsed * 0.09;
+                camera.position.x = Math.sin(angle) * 6;
+                camera.position.z = 24 + Math.cos(angle) * 2;
+                camera.lookAt(0, 1.8, 0);
+              }
+
+              // Smooth camera transition
+              if (stateRef.current.cameraAnim) {
+                const anim = stateRef.current.cameraAnim;
+                anim.progress += dt / anim.duration;
+                const t = Math.min(anim.progress, 1);
+                // Cubic ease in-out
+                const ease = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+                camera.position.lerpVectors(anim.startPos, anim.endPos, ease);
+                controls.target.lerpVectors(anim.startLook, anim.endLook, ease);
+                if (t >= 1) {
+                  stateRef.current.cameraAnim = null;
+                }
+              }
+
+              if (!rm) {
+                // Gentle island bobbing
+                Object.keys(islandGroups).forEach((key, idx) => {
+                  const grp = islandGroups[key];
+                  grp.position.y = grp.userData.baseY + Math.sin(elapsed * 0.7 + idx * 1.1) * 0.16;
+                });
+
+                // Orbiting skill crystals & holo displays
+                floatingOrbs.forEach((orb) => {
+                  orb.mesh.rotation.y += dt * 0.7;
+                  orb.mesh.position.y = orb.baseY + Math.sin(elapsed * orb.speed + orb.phase) * 0.18;
+                  if (orb.orbitRadius) {
+                    const a = orb.orbitAngle + elapsed * 0.22;
+                    orb.mesh.position.x = Math.cos(a) * orb.orbitRadius;
+                    orb.mesh.position.z = Math.sin(a) * orb.orbitRadius;
+                  }
+                });
+
+                // Waterfall drops
+                waterfallDrops.forEach((drop) => {
+                  drop.mesh.position.y -= dt * drop.speed;
+                  if (drop.mesh.position.y < drop.minY) {
+                    drop.mesh.position.y = drop.startY;
+                  }
+                });
+
+                // Drifting clouds
+                clouds.forEach((c) => {
+                  c.group.position.x += dt * c.speed;
+                  if (c.group.position.x > 46) c.group.position.x = -46;
+                });
+
+                // Birds circling
+                birds.forEach((b) => {
+                  b.angle += dt * b.speed;
+                  b.group.position.x = Math.cos(b.angle) * b.radius;
+                  b.group.position.z = Math.sin(b.angle) * b.radius;
+                  b.group.position.y = b.yBase + Math.sin(elapsed * 1.8 + b.angle) * 0.35;
+                  b.group.rotation.y = -b.angle;
+                  const flap = Math.sin(elapsed * 7 + b.angle) * 0.35;
+                  b.leftWing.rotation.z = flap;
+                  b.rightWing.rotation.z = -flap;
+                });
+
+                // Gentle particle drift
+                particles.rotation.y = elapsed * 0.02;
+              }
+
+              // Animate selection halo ring under active or hovered island
+              const targetRingId = stateRef.current.activeIslandId || stateRef.current.hoveredId;
+              if (targetRingId && islandGroups[targetRingId]) {
+                const grp = islandGroups[targetRingId];
+                selectionRing.position.set(grp.position.x, grp.position.y + 0.48, grp.position.z);
+                const pulse = rm ? 1 : 1 + Math.sin(elapsed * 2.4) * 0.035;
+                const scaleBase = targetRingId === 'home' ? 1.05 : 0.85;
+                selectionRing.scale.setScalar(scaleBase * pulse);
+                selectionRing.material.opacity = stateRef.current.activeIslandId ? 0.55 : 0.35;
+              } else {
+                selectionRing.material.opacity = 0;
+              }
+
+              controls.update();
+              renderer.render(scene, camera);
+
+              // Project 3D island & skill crystal positions to 2D overlay labels
+              const labelLayer = stateRef.current.labelLayer;
+              if (labelLayer) {
+                const cw = container.clientWidth || window.innerWidth;
+                const ch = container.clientHeight || window.innerHeight;
+                const showIslands = stateRef.current.entered && !stateRef.current.activeIslandId;
+                const showSkills = stateRef.current.entered && stateRef.current.activeIslandId === 'garden';
+
+                ISLANDS.forEach((isl) => {
+                  const el = labelLayer.querySelector('[data-beacon="' + isl.id + '"]');
+                  if (!el) return;
+                  if (!showIslands) {
+                    el.style.opacity = '0';
+                    el.style.pointerEvents = 'none';
+                    return;
+                  }
+                  const grp = islandGroups[isl.id];
+                  const worldPos = new THREE.Vector3(
+                    isl.position[0],
+                    (grp ? grp.position.y : isl.position[1]) + 4.4,
+                    isl.position[2]
+                  );
+                  worldPos.project(camera);
+                  if (worldPos.z > 1) {
+                    el.style.opacity = '0';
+                    el.style.pointerEvents = 'none';
+                  } else {
+                    const sx = (worldPos.x * 0.5 + 0.5) * cw;
+                    const sy = (-worldPos.y * 0.5 + 0.5) * ch;
+                    el.style.transform = 'translate3d(' + sx.toFixed(1) + 'px, ' + sy.toFixed(1) + 'px, 0) translate(-50%, -50%)';
+                    el.style.opacity = '1';
+                    el.style.pointerEvents = 'auto';
+                  }
+                });
+
+                SKILLS_ORBIT.forEach((sk, idx) => {
+                  const el = labelLayer.querySelector('[data-skill-beacon="' + idx + '"]');
+                  if (!el) return;
+                  if (!showSkills) {
+                    el.style.opacity = '0';
+                    return;
+                  }
+                  const orb = floatingOrbs.find(o => o.parentGroup === gardenGroup && o.phase === idx * 0.8);
+                  if (!orb) return;
+                  const worldPos = new THREE.Vector3();
+                  orb.mesh.getWorldPosition(worldPos);
+                  worldPos.y += 0.7;
+                  worldPos.project(camera);
+                  if (worldPos.z > 1) {
+                    el.style.opacity = '0';
+                  } else {
+                    const sx = (worldPos.x * 0.5 + 0.5) * cw;
+                    const sy = (-worldPos.y * 0.5 + 0.5) * ch;
+                    el.style.transform = 'translate3d(' + sx.toFixed(1) + 'px, ' + sy.toFixed(1) + 'px, 0) translate(-50%, -50%)';
+                    el.style.opacity = '1';
+                  }
+                });
+              }
+            }
+            animate();
+
+            return () => {
+              cancelAnimationFrame(frameId);
+              window.removeEventListener('resize', onResize);
+              renderer.domElement.removeEventListener('pointerdown', onPointerDown);
+              renderer.domElement.removeEventListener('pointermove', onPointerMove);
+              renderer.domElement.removeEventListener('pointerup', onPointerUp);
+              controls.dispose();
+              renderer.dispose();
+              if (renderer.domElement && renderer.domElement.parentNode === container) {
+                container.removeChild(renderer.domElement);
+              }
+            };
+          } catch (err) {
+            // Graceful fallback if WebGL is unavailable in headless/software environments
+            onSceneReady();
+          }
+        }, []);
+
+        return e(React.Fragment, null,
+          e('div', {
+            ref: mountRef,
+            className: 'fixed inset-0 z-0 w-full h-full',
+            'aria-label': 'Interactive 3D Fantasy World of Arjun Jayraj'
+          }),
+          e('div', {
+            ref: (el) => { stateRef.current.labelLayer = el; },
+            className: 'fixed inset-0 z-10 pointer-events-none overflow-hidden'
+          },
+            ISLANDS.map((isl) =>
+              e('button', {
+                key: isl.id,
+                'data-beacon': isl.id,
+                type: 'button',
+                onClick: () => onSelectIsland(isl.id),
+                style: { opacity: 0, pointerEvents: 'none', transition: 'opacity 250ms ease' },
+                className: 'hidden sm:inline-flex absolute top-0 left-0 aether-glass items-center gap-gutter-xs px-gutter-sm py-gutter-xs rounded-full border border-champagne-gold/50 hover:border-primary hover:bg-primary-container/80 text-on-surface shadow-sm cursor-pointer'
+              },
+                e('span', { className: 'font-label text-label-sm text-primary' }, isl.number),
+                e('span', { className: 'font-headline text-body-md font-semibold text-on-surface whitespace-nowrap' }, isl.name)
+              )
+            ),
+            SKILLS_ORBIT.map((sk, idx) =>
+              e('div', {
+                key: sk.name,
+                'data-skill-beacon': idx,
+                style: { opacity: 0, transition: 'opacity 250ms ease' },
+                className: 'hidden sm:inline-flex absolute top-0 left-0 aether-glass items-center px-gutter-sm py-gutter-xs rounded-full border border-sage-green text-on-secondary-container pointer-events-none'
+              },
+                e('span', { className: 'font-label text-label-sm font-bold whitespace-nowrap' }, sk.name)
+              )
+            )
+          )
+        );
+      }
+
+      // =========================================================================
+      // INTERACTIVE 3D PROJECT MODEL VIEWER (Drag to rotate + Wireframe toggle)
+      // =========================================================================
+      function ProjectModelViewer({ project, reducedMotion }) {
+        const viewerRef = useRef(null);
+        const [wireframe, setWireframe] = useState(false);
+        const [autoSpin, setAutoSpin] = useState(!reducedMotion);
+        const stateRef = useRef({ wireframe: false, autoSpin: !reducedMotion });
+
+        stateRef.current.wireframe = wireframe;
+        stateRef.current.autoSpin = autoSpin;
+
+        useEffect(() => {
+          const el = viewerRef.current;
+          if (!el || typeof THREE === 'undefined') return;
+
+          let renderer, scene, camera, controls, frameId, mainGroup;
+          try {
+            const w = el.clientWidth || 360;
+            const h = el.clientHeight || 200;
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color('#EEF3F7');
+
+            camera = new THREE.PerspectiveCamera(40, w / h, 0.1, 50);
+            camera.position.set(0, 1.4, 4.2);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            el.innerHTML = '';
+            el.appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.08;
+            controls.enableZoom = true;
+            controls.minDistance = 2.4;
+            controls.maxDistance = 6.5;
+
+            const hemi = new THREE.HemisphereLight('#F8F5EF', '#DCD2E8', 1.2);
+            scene.add(hemi);
+            const dir = new THREE.DirectionalLight('#FFF5E4', 1.3);
+            dir.position.set(4, 6, 4);
+            scene.add(dir);
+
+            mainGroup = new THREE.Group();
+            const matGold = new THREE.MeshStandardMaterial({ color: '#B99A65', roughness: 0.25, metalness: 0.78 });
+            const matGlass = new THREE.MeshPhysicalMaterial({ color: '#DCE8F0', roughness: 0.1, metalness: 0.1, transparent: true, opacity: 0.62 });
+            const matSage = new THREE.MeshStandardMaterial({ color: '#C7D9CF', roughness: 0.5, metalness: 0.15 });
+            const matLav = new THREE.MeshStandardMaterial({ color: '#DCD2E8', roughness: 0.45, metalness: 0.2 });
+
+            if (project.id === 'careerpilot') {
+              const core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.85, 1), matGlass);
+              const ring1 = new THREE.Mesh(new THREE.TorusGeometry(1.25, 0.04, 12, 48), matGold);
+              const ring2 = new THREE.Mesh(new THREE.TorusGeometry(1.45, 0.03, 12, 48), matLav);
+              ring2.rotation.x = Math.PI / 3;
+              mainGroup.add(core, ring1, ring2);
+            } else if (project.id === 'findcart') {
+              const box = new THREE.Mesh(new THREE.BoxGeometry(1.15, 1.15, 1.15), matGlass);
+              const frame = new THREE.Mesh(new THREE.TorusGeometry(1.15, 0.05, 10, 4), matGold);
+              frame.rotation.z = Math.PI / 4;
+              const orb = new THREE.Mesh(new THREE.OctahedronGeometry(0.45, 0), matGold);
+              mainGroup.add(box, frame, orb);
+            } else if (project.id === 'cloud-migration') {
+              for (let i = 0; i < 3; i++) {
+                const layer = new THREE.Mesh(new THREE.CylinderGeometry(1.0 - i * 0.2, 1.1 - i * 0.2, 0.28, 6), i === 1 ? matGold : matSage);
+                layer.position.y = (i - 1) * 0.52;
+                mainGroup.add(layer);
+              }
+            } else {
+              const prism = new THREE.Mesh(new THREE.OctahedronGeometry(0.95, 0), matGlass);
+              const halo = new THREE.Mesh(new THREE.TorusGeometry(1.2, 0.04, 10, 36), matGold);
+              halo.rotation.x = Math.PI / 2.4;
+              mainGroup.add(prism, halo);
+            }
+
+            scene.add(mainGroup);
+
+            const clock = new THREE.Clock();
+            function tick() {
+              frameId = requestAnimationFrame(tick);
+              const dt = Math.min(clock.getDelta(), 0.05);
+              mainGroup.traverse((obj) => {
+                if (obj.isMesh && obj.material) {
+                  obj.material.wireframe = stateRef.current.wireframe;
+                }
+              });
+              if (stateRef.current.autoSpin) {
+                mainGroup.rotation.y += dt * 0.55;
+              }
+              controls.update();
+              renderer.render(scene, camera);
+            }
+            tick();
+
+            return () => {
+              cancelAnimationFrame(frameId);
+              controls.dispose();
+              renderer.dispose();
+            };
+          } catch (err) {
+            // Graceful fallback if WebGL unavailable
+          }
+        }, [project.id]);
+
+        return e('div', { className: 'rounded-md overflow-hidden border border-champagne-gold/45 bg-powder-blue/40 flex flex-col' },
+          e('div', {
+            ref: viewerRef,
+            className: 'w-full h-44 cursor-grab active:cursor-grabbing',
+            'aria-label': 'Interactive 3D model for ' + project.title
+          }),
+          e('div', { className: 'px-gutter-md py-gutter-xs bg-surface-container-low/85 border-t border-outline-variant/40 flex items-center justify-between gap-gutter-sm' },
+            e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Drag to rotate • Scroll to zoom'),
+            e('div', { className: 'flex items-center gap-gutter-xs' },
+              e('button', {
+                type: 'button',
+                onClick: () => setWireframe(v => !v),
+                'aria-pressed': wireframe ? 'true' : 'false',
+                className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm border transition-colors ' +
+                  (wireframe ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-outline-variant/60 text-on-surface hover:bg-primary-container')
+              }, 'Wireframe'),
+              e('button', {
+                type: 'button',
+                onClick: () => setAutoSpin(v => !v),
+                'aria-pressed': autoSpin ? 'true' : 'false',
+                className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm border transition-colors ' +
+                  (autoSpin ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-outline-variant/60 text-on-surface hover:bg-primary-container')
+              }, autoSpin ? 'Spin On' : 'Spin Off')
+            )
+          )
+        );
+      }
+
+      // =========================================================================
+      // ISLAND CONTENT RENDERER (Authentic Portfolio Sections)
+      // =========================================================================
+      function IslandPanelContent({ islandId, onNavigate, reducedMotion }) {
+        const [formSent, setFormSent] = useState(false);
+        const [senderName, setSenderName] = useState('');
+        const [senderEmail, setSenderEmail] = useState('');
+        const [senderMsg, setSenderMsg] = useState('');
+        const [selectedProject, setSelectedProject] = useState(null);
+
+        useEffect(() => {
+          setSelectedProject(null);
+        }, [islandId]);
+
+        if (islandId === 'home') {
+          return e('div', { className: 'flex flex-col gap-gutter-lg' },
+            e('div', { className: 'flex flex-col gap-gutter-sm' },
+              e('p', { className: 'font-body text-body-lg text-on-surface leading-relaxed text-pretty' },
+                'Hello! I’m Arjun Jayraj—a passionate Cloud Engineer and Web Developer based in Bangalore, India, with expertise in creating scalable cloud solutions and serene, memorable digital experiences.'
+              ),
+              e('p', { className: 'font-body text-body-md text-on-surface-variant leading-relaxed text-pretty' },
+                'With over 2 years of experience, my approach combines technical precision in cloud infrastructure and DevOps automation with timeless design principles.'
+              )
+            ),
+            // Metrics row
+            e('div', { className: 'grid grid-cols-3 gap-gutter-sm' },
+              [
+                { val: '2+', label: 'Years Exp.' },
+                { val: '15+', label: 'Projects' },
+                { val: '10+', label: 'Happy Clients' }
+              ].map((m) =>
+                e('div', {
+                  key: m.label,
+                  className: 'p-gutter-md rounded-md bg-surface-container-low/90 border border-champagne-gold/30 text-center'
+                },
+                  e('div', { className: 'font-headline text-headline-sm text-primary tabular-nums' }, m.val),
+                  e('div', { className: 'font-label text-label-sm text-on-surface-variant' }, m.label)
+                )
+              )
+            ),
+            // Services
+            e('div', { className: 'flex flex-col gap-gutter-sm' },
+              e('h3', { className: 'font-title text-title-md text-on-surface' }, 'What I Craft'),
+              e('div', { className: 'grid grid-cols-1 sm:grid-cols-2 gap-gutter-sm' },
+                [
+                  { title: 'Web Development', desc: 'Responsive, high-performance web apps with modern architectures.' },
+                  { title: 'Cloud Solutions', desc: 'Scalable AWS & Azure infrastructure built for security and efficiency.' },
+                  { title: 'UI / UX Design', desc: 'Intuitive, accessible interfaces with calm visual clarity.' },
+                  { title: 'DevOps', desc: 'CI/CD pipelines, containerization, and reliable automation.' }
+                ].map((s) =>
+                  e('div', {
+                    key: s.title,
+                    className: 'p-gutter-md rounded-DEFAULT bg-surface-container/70 border border-outline-variant/50 flex flex-col gap-gutter-xs'
+                  },
+                    e('span', { className: 'font-title text-body-lg font-bold text-on-surface' }, s.title),
+                    e('span', { className: 'font-body text-body-md text-on-surface-variant' }, s.desc)
+                  )
+                )
+              )
+            ),
+            e('a', {
+              href: 'mailto:arjunarkmma@gmail.com?subject=CV%20Request%20%E2%80%94%20Arjun%20Jayraj',
+              className: 'w-full py-gutter-sm rounded-full bg-primary text-on-primary font-label text-label-lg hover:bg-on-primary-container transition-colors inline-flex items-center justify-center gap-gutter-xs'
+            },
+              e('span', { className: 'material-symbols-outlined text-body-lg' }, 'description'),
+              e('span', null, 'Request CV')
+            )
+          );
+        }
+
+        if (islandId === 'garden') {
+          return e('div', { className: 'flex flex-col gap-gutter-lg' },
+            e('div', { className: 'flex flex-col gap-gutter-sm' },
+              e('h3', { className: 'font-title text-title-md text-on-surface' }, 'Orbiting Cloud & DevOps Disciplines'),
+              e('div', { className: 'grid grid-cols-2 gap-gutter-sm' },
+                SKILLS_ORBIT.map((sk) =>
+                  e('div', {
+                    key: sk.name,
+                    className: 'p-gutter-md rounded-DEFAULT bg-secondary-container/45 border border-sage-green flex flex-col gap-gutter-xs'
+                  },
+                    e('span', { className: 'font-title text-body-lg font-bold text-on-secondary-container' }, sk.name),
+                    e('span', { className: 'font-label text-label-sm text-secondary' }, sk.category)
+                  )
+                )
+              )
+            ),
+            e('div', { className: 'flex flex-col gap-gutter-sm' },
+              e('h3', { className: 'font-title text-title-md text-on-surface' }, 'Core Proficiency'),
+              e('div', { className: 'flex flex-col gap-gutter-sm' },
+                EXPERTISE_BARS.map((bar) =>
+                  e('div', { key: bar.label, className: 'flex flex-col gap-gutter-xs' },
+                    e('div', { className: 'flex justify-between items-center' },
+                      e('span', { className: 'font-body text-body-md font-bold text-on-surface' }, bar.label),
+                      e('span', { className: 'font-label text-label-sm text-primary tabular-nums' }, bar.pct + '%')
+                    ),
+                    e('div', { className: 'h-2 w-full rounded-full bg-surface-container-high overflow-hidden' },
+                      e('div', {
+                        className: 'h-full rounded-full bg-primary',
+                        style: { width: bar.pct + '%' }
+                      })
+                    )
+                  )
+                )
+              )
+            )
+          );
+        }
+
+        if (islandId === 'gallery') {
+          if (selectedProject) {
+            return e('div', { className: 'flex flex-col gap-gutter-lg' },
+              e('button', {
+                type: 'button',
+                onClick: () => setSelectedProject(null),
+                className: 'self-start inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-xs rounded-full bg-surface-container border border-outline-variant/60 text-on-surface font-label text-label-sm hover:bg-primary-container transition-colors'
+              },
+                e('span', { className: 'material-symbols-outlined text-body-md text-primary' }, 'arrow_back'),
+                e('span', null, 'All Gallery Projects')
+              ),
+              e('div', { className: 'p-gutter-lg rounded-md bg-powder-blue/45 border border-champagne-gold/45 flex flex-col gap-gutter-sm' },
+                e('div', { className: 'flex items-center justify-between gap-gutter-sm' },
+                  e('span', { className: 'font-label text-label-sm text-primary uppercase tracking-wider' }, selectedProject.category),
+                  selectedProject.featured && e('span', { className: 'px-gutter-sm py-gutter-xs rounded-full bg-primary text-on-primary font-label text-label-sm' }, 'Featured')
+                ),
+                e('h3', { className: 'font-headline text-headline-sm text-on-surface' }, selectedProject.title),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, selectedProject.description)
+              ),
+              e(ProjectModelViewer, { project: selectedProject, reducedMotion }),
+              e('div', { className: 'flex flex-col gap-gutter-xs' },
+                e('h4', { className: 'font-title text-body-lg font-bold text-on-surface' }, 'Architecture & Craft'),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, selectedProject.architecture)
+              ),
+              e('div', { className: 'flex flex-col gap-gutter-xs' },
+                e('h4', { className: 'font-title text-body-lg font-bold text-on-surface' }, 'Key Highlights'),
+                e('ul', { className: 'flex flex-col gap-gutter-xs' },
+                  selectedProject.highlights.map((hl) =>
+                    e('li', { key: hl, className: 'flex items-start gap-gutter-sm font-body text-body-md text-on-surface-variant' },
+                      e('span', { className: 'material-symbols-outlined text-primary text-body-lg shrink-0' }, 'auto_awesome'),
+                      e('span', null, hl)
+                    )
+                  )
+                )
+              ),
+              e('div', { className: 'flex flex-wrap gap-gutter-xs' },
+                selectedProject.stack.map((tech) =>
+                  e('span', {
+                    key: tech,
+                    className: 'px-gutter-sm py-gutter-xs rounded-full bg-surface-container-low border border-outline-variant/60 font-label text-label-sm text-on-surface'
+                  }, tech)
+                )
+              ),
+              e('div', { className: 'flex flex-col gap-gutter-sm' },
+                selectedProject.liveUrl && e('a', {
+                  href: selectedProject.liveUrl,
+                  target: '_blank',
+                  rel: 'noopener noreferrer',
+                  className: 'w-full py-gutter-sm rounded-full bg-primary text-on-primary font-label text-label-lg hover:bg-on-primary-container transition-colors inline-flex items-center justify-center gap-gutter-xs'
+                },
+                  e('span', { className: 'material-symbols-outlined text-body-lg' }, 'open_in_new'),
+                  e('span', null, 'Visit Live Project')
+                ),
+                e('button', {
+                  type: 'button',
+                  onClick: () => onNavigate('contact'),
+                  className: 'w-full py-gutter-sm rounded-full ' +
+                    (selectedProject.liveUrl
+                      ? 'bg-surface-container-low border border-champagne-gold/50 text-on-surface hover:bg-primary-container'
+                      : 'bg-primary text-on-primary hover:bg-on-primary-container') +
+                    ' font-label text-label-lg transition-colors inline-flex items-center justify-center gap-gutter-xs'
+                },
+                  e('span', { className: 'material-symbols-outlined text-body-lg' }, 'send'),
+                  e('span', null, 'Discuss Similar Project')
+                )
+              )
+            );
+          }
+
+          return e('div', { className: 'flex flex-col gap-gutter-md' },
+            PROJECTS.map((proj) =>
+              e('button', {
+                key: proj.id,
+                type: 'button',
+                'data-component-id': 'card-interactive-2',
+                'data-component-type': 'card',
+                'data-component-variant': 'interactive',
+                onClick: () => setSelectedProject(proj),
+                className: 'w-full text-left p-gutter-md rounded-md bg-surface-container-low/90 border ' + (proj.featured ? 'border-champagne-gold' : 'border-outline-variant/60') + ' hover:bg-primary-container/45 hover:border-primary transition-colors flex flex-col gap-gutter-xs cursor-pointer'
+              },
+                e('div', { className: 'w-full flex items-center justify-between gap-gutter-sm' },
+                  e('h3', { className: 'font-title text-title-md text-on-surface' }, proj.title),
+                  proj.featured
+                    ? e('span', { className: 'px-gutter-sm py-gutter-xs rounded-full bg-primary-container text-on-primary-container font-label text-label-sm' }, 'Featured')
+                    : e('span', { className: 'material-symbols-outlined text-primary text-body-lg' }, 'arrow_forward')
+                ),
+                e('span', { className: 'font-label text-label-sm text-primary' }, proj.category),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, proj.description),
+                e('span', { className: 'pt-gutter-xs font-label text-label-sm text-primary inline-flex items-center gap-gutter-xs' },
+                  e('span', null, 'Inspect Hologram & Architecture'),
+                  e('span', { className: 'material-symbols-outlined text-label-lg' }, 'open_in_full')
+                )
+              )
+            )
+          );
+        }
+
+        if (islandId === 'achievements') {
+          return e('div', { className: 'flex flex-col gap-gutter-lg' },
+            e('div', { className: 'flex flex-col gap-gutter-sm' },
+              ACHIEVEMENTS.map((ach) =>
+                e('div', {
+                  key: ach.title,
+                  className: 'p-gutter-md rounded-md bg-dusty-blush/45 border border-champagne-gold/30 flex flex-col gap-gutter-xs'
+                },
+                  e('span', { className: 'font-label text-label-sm text-primary uppercase tracking-wider' }, ach.tag),
+                  e('h3', { className: 'font-title text-title-md text-on-surface' }, ach.title),
+                  e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, ach.description)
+                )
+              )
+            ),
+            e('div', { className: 'flex flex-col gap-gutter-sm' },
+              e('h3', { className: 'font-title text-title-md text-on-surface' }, 'Client Voices'),
+              TESTIMONIALS.map((t) =>
+                e('blockquote', {
+                  key: t.author,
+                  className: 'p-gutter-md rounded-DEFAULT bg-surface-container-low/85 border border-outline-variant/50 flex flex-col gap-gutter-xs'
+                },
+                  e('p', { className: 'font-body text-body-md italic text-on-surface text-pretty' }, '“' + t.quote + '”'),
+                  e('footer', { className: 'font-label text-label-sm text-primary' }, t.author + ' — ' + t.role)
+                )
+              )
+            )
+          );
+        }
+
+        if (islandId === 'library') {
+          return e('div', { className: 'flex flex-col gap-gutter-lg' },
+            e('div', { className: 'p-gutter-md rounded-md bg-soft-lavender/45 border border-champagne-gold/30 flex flex-col gap-gutter-xs' },
+              e('span', { className: 'font-label text-label-sm text-primary uppercase tracking-wider' }, 'Academic Focus'),
+              e('h3', { className: 'font-title text-title-md text-on-surface' }, 'Cloud Computing Student'),
+              e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' },
+                'Deepening foundational expertise in distributed cloud architectures, Linux administration, networking protocols, and database systems.'
+              )
+            ),
+            e('div', { className: 'p-gutter-md rounded-md bg-surface-container-low/90 border border-outline-variant/60 flex flex-col gap-gutter-xs' },
+              e('span', { className: 'font-label text-label-sm text-secondary uppercase tracking-wider' }, 'Career Direction'),
+              e('h3', { className: 'font-title text-title-md text-on-surface' }, 'Aspiring DevOps & Cloud Engineer'),
+              e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' },
+                'Bridging software development and resilient cloud operations—automating deployments with Docker, Git workflows, and CI/CD pipelines on AWS and Azure.'
+              )
+            ),
+            e('div', { className: 'p-gutter-md rounded-md bg-powder-blue/45 border border-outline-variant/50 flex flex-col gap-gutter-xs' },
+              e('span', { className: 'font-label text-label-sm text-on-surface uppercase tracking-wider' }, 'Philosophy'),
+              e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' },
+                '“Exploring Ideas. Building Possibilities.” — Continuous learning keeps craft sharp, grounded, and ready for real-world scale.'
+              )
+            )
+          );
+        }
+
+        if (islandId === 'contact') {
+          return e('div', { className: 'flex flex-col gap-gutter-lg' },
+            e('div', { className: 'grid grid-cols-1 gap-gutter-sm' },
+              e('a', {
+                href: 'mailto:arjunarkmma@gmail.com',
+                className: 'p-gutter-md rounded-DEFAULT bg-surface-container-low/90 border border-champagne-gold/40 hover:bg-primary-container/50 transition-colors flex items-center gap-gutter-md'
+              },
+                e('span', { className: 'material-symbols-outlined text-primary' }, 'mail'),
+                e('div', { className: 'flex flex-col' },
+                  e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Email'),
+                  e('span', { className: 'font-body text-body-md font-bold text-on-surface' }, 'arjunarkmma@gmail.com')
+                )
+              ),
+              e('a', {
+                href: 'tel:+919035299301',
+                className: 'p-gutter-md rounded-DEFAULT bg-surface-container-low/90 border border-outline-variant/60 hover:bg-primary-container/50 transition-colors flex items-center gap-gutter-md'
+              },
+                e('span', { className: 'material-symbols-outlined text-primary' }, 'call'),
+                e('div', { className: 'flex flex-col' },
+                  e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Phone'),
+                  e('span', { className: 'font-body text-body-md font-bold text-on-surface tabular-nums' }, '+91 9035299301')
+                )
+              ),
+              e('div', {
+                className: 'p-gutter-md rounded-DEFAULT bg-surface-container-low/90 border border-outline-variant/60 flex items-center gap-gutter-md'
+              },
+                e('span', { className: 'material-symbols-outlined text-primary' }, 'location_on'),
+                e('div', { className: 'flex flex-col' },
+                  e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Location'),
+                  e('span', { className: 'font-body text-body-md font-bold text-on-surface' }, 'Bangalore, India')
+                )
+              )
+            ),
+            // Social links
+            e('div', { className: 'flex flex-wrap gap-gutter-sm' },
+              e('a', {
+                href: 'https://www.linkedin.com/in/arjun-jayraj-cloud',
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                className: 'inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-sm rounded-full bg-primary text-on-primary font-label text-label-lg hover:bg-on-primary-container transition-colors'
+              },
+                e('span', { className: 'material-symbols-outlined text-body-lg' }, 'open_in_new'),
+                e('span', null, 'LinkedIn')
+              ),
+              e('a', {
+                href: 'mailto:arjunarkmma@gmail.com?subject=GitHub%20%26%20Portfolio%20Inquiry',
+                className: 'inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-sm rounded-full bg-surface-container-low border border-champagne-gold/50 text-on-surface font-label text-label-lg hover:bg-primary-container transition-colors'
+              },
+                e('span', { className: 'material-symbols-outlined text-body-lg text-primary' }, 'code'),
+                e('span', null, 'Request GitHub')
+              )
+            ),
+            // Contact Form
+            formSent
+              ? e('div', { className: 'p-gutter-lg rounded-md bg-secondary-container text-on-secondary-container border border-sage-green flex flex-col gap-gutter-xs' },
+                  e('span', { className: 'font-title text-title-md' }, 'Message Sent Across the Sky'),
+                  e('p', { className: 'font-body text-body-md' }, 'Thank you for reaching out. Arjun will respond to ' + (senderEmail || 'your inbox') + ' shortly.')
+                )
+              : e('form', {
+                  className: 'flex flex-col gap-gutter-sm pt-gutter-sm border-t border-outline-variant/50',
+                  onSubmit: (ev) => {
+                    ev.preventDefault();
+                    setFormSent(true);
+                  }
+                },
+                  e('h3', { className: 'font-title text-title-md text-on-surface' }, 'Send a Direct Message'),
+                  e('input', {
+                    type: 'text',
+                    required: true,
+                    placeholder: 'Your Name',
+                    value: senderName,
+                    onChange: (ev) => setSenderName(ev.target.value),
+                    className: 'w-full px-gutter-md py-gutter-sm rounded-DEFAULT bg-surface-container-low border border-outline-variant text-on-surface font-body text-body-md focus:border-primary focus:ring-primary'
+                  }),
+                  e('input', {
+                    type: 'email',
+                    required: true,
+                    placeholder: 'Your Email',
+                    value: senderEmail,
+                    onChange: (ev) => setSenderEmail(ev.target.value),
+                    className: 'w-full px-gutter-md py-gutter-sm rounded-DEFAULT bg-surface-container-low border border-outline-variant text-on-surface font-body text-body-md focus:border-primary focus:ring-primary'
+                  }),
+                  e('textarea', {
+                    rows: 3,
+                    required: true,
+                    placeholder: 'Share your idea or opportunity...',
+                    value: senderMsg,
+                    onChange: (ev) => setSenderMsg(ev.target.value),
+                    className: 'w-full px-gutter-md py-gutter-sm rounded-DEFAULT bg-surface-container-low border border-outline-variant text-on-surface font-body text-body-md focus:border-primary focus:ring-primary'
+                  }),
+                  e('button', {
+                    type: 'submit',
+                    className: 'w-full py-gutter-sm rounded-full bg-primary text-on-primary font-label text-label-lg hover:bg-on-primary-container transition-colors'
+                  }, 'Send Message')
+                )
+          );
+        }
+
+        return null;
+      }
+
+      // =========================================================================
+      // MAIN APP SHELL
+      // =========================================================================
+      function AetherApp() {
+        const [sceneReady, setSceneReady] = useState(false);
+        const [entered, setEntered] = useState(false);
+        const [activeIslandId, setActiveIslandId] = useState(null);
+        const [hoveredIslandId, setHoveredIslandId] = useState(null);
+        const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+        const [reducedMotion, setReducedMotion] = useState(() => {
+          try {
+            return window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+          } catch (err) {
+            return false;
+          }
+        });
+
+        // Keyboard shortcuts: Escape returns to sky or closes panel; 1-6 jump to islands
+        useEffect(() => {
+          const onKeyDown = (ev) => {
+            if (!entered) {
+              if (ev.key === 'Enter') setEntered(true);
+              return;
+            }
+            if (ev.key === 'Escape') {
+              if (mobileMenuOpen) setMobileMenuOpen(false);
+              else if (activeIslandId) setActiveIslandId(null);
+            }
+            const num = parseInt(ev.key, 10);
+            if (num >= 1 && num <= 6 && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+              setActiveIslandId(ISLANDS[num - 1].id);
+            } else if (ev.key === '0' && document.activeElement.tagName !== 'INPUT' && document.activeElement.tagName !== 'TEXTAREA') {
+              setActiveIslandId(null);
+            }
+          };
+          window.addEventListener('keydown', onKeyDown);
+          return () => window.removeEventListener('keydown', onKeyDown);
+        }, [entered, activeIslandId, mobileMenuOpen]);
+
+        const activeIsland = ISLANDS.find(i => i.id === activeIslandId) || null;
+        const hoveredIsland = ISLANDS.find(i => i.id === hoveredIslandId) || null;
+
+        return e('div', { className: 'relative min-h-screen w-full overflow-hidden flex flex-col justify-between' },
+
+          // 1. REAL-TIME 3D FANTASY WORLD
+          e(AetherWorldCanvas, {
+            entered,
+            activeIslandId,
+            onSelectIsland: (id) => setActiveIslandId(id),
+            reducedMotion,
+            onSceneReady: () => setSceneReady(true),
+            onHoverIsland: (id) => setHoveredIslandId(id)
+          }),
+
+          // 2. LOADING VEIL (fades out once 3D world mounts)
+          !sceneReady && e('div', {
+            className: 'fixed inset-0 z-50 bg-surface flex flex-col items-center justify-center gap-gutter-md'
+          },
+            e('div', { className: 'w-10 h-10 rounded-full border-2 border-champagne-gold/30 border-t-primary animate-spin' }),
+            e('span', { className: 'font-label text-label-sm uppercase tracking-widest text-primary' }, 'Awakening Aether...')
+          ),
+
+          // 3. CINEMATIC OPENING SCREEN (Before "ENTER MY WORLD")
+          !entered && e('main', {
+            className: 'relative z-20 min-h-screen w-full flex flex-col items-center justify-center p-gutter-lg text-center pointer-events-none'
+          },
+            e('div', {
+              className: 'aether-glass max-w-2xl w-full p-gutter-xl sm:p-section rounded-lg border border-champagne-gold/40 flex flex-col items-center gap-gutter-md pointer-events-auto animate-float-slow'
+            },
+              e('span', {
+                'data-design-text-token': 'label-sm',
+                className: 'font-label text-label-sm uppercase tracking-widest text-primary px-gutter-md py-gutter-xs rounded-full bg-primary-container/70 border border-champagne-gold/30'
+              }, 'Aether — 3D Sanctuary'),
+
+              e('h1', {
+                'data-design-text-token': 'display-lg',
+                className: 'font-display text-display-lg-mobile sm:text-display-lg text-on-surface tracking-tight text-balance'
+              }, 'ARJUN JAYRAJ'),
+
+              e('p', {
+                'data-design-text-token': 'headline-sm',
+                className: 'font-headline text-headline-sm italic text-primary text-balance'
+              }, '“Exploring Ideas. Building Possibilities.”'),
+
+              e('p', {
+                'data-design-text-token': 'body-lg',
+                className: 'font-body text-body-lg text-on-surface-variant max-w-prose text-pretty'
+              }, 'Cloud Computing Student | Aspiring DevOps Engineer | Technology Enthusiast.'),
+
+              e('div', { className: 'pt-gutter-sm flex flex-col items-center gap-gutter-sm' },
+                e('button', {
+                  'data-component-id': 'button-primary',
+                  'data-component-type': 'button',
+                  'data-component-variant': 'primary',
+                  type: 'button',
+                  onClick: () => setEntered(true),
+                  className: 'inline-flex items-center justify-center gap-gutter-sm px-gutter-xl py-gutter-md rounded-full bg-primary text-on-primary shadow-md transition-colors duration-state-change ease-state-change hover:bg-on-primary-container focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-gold focus-visible:ring-offset-2'
+                },
+                  e('span', { className: 'material-symbols-outlined text-title-md', 'aria-hidden': 'true' }, 'explore'),
+                  e('span', { 'data-design-text-token': 'label-lg', className: 'font-label text-label-lg uppercase tracking-widest' }, 'ENTER MY WORLD')
+                ),
+                e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Drag to orbit • Scroll to zoom • Click any floating island')
+              )
+            )
+          ),
+
+          // 4. EXPLORATION HUD (Visible after entering the world)
+          entered && e(React.Fragment, null,
+            // TOP BAR
+            e('header', {
+              className: 'relative z-20 w-full p-gutter-md sm:p-gutter-lg flex items-center justify-between gap-gutter-md pointer-events-none'
+            },
+              // Brand / Return to Overview
+              e('button', {
+                type: 'button',
+                onClick: () => setActiveIslandId(null),
+                className: 'aether-glass pointer-events-auto inline-flex items-center gap-gutter-sm px-gutter-md py-gutter-sm rounded-full border border-champagne-gold/40 hover:border-champagne-gold transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-gold'
+              },
+                e('span', { className: 'material-symbols-outlined text-primary text-title-md', 'aria-hidden': 'true' }, 'cloud'),
+                e('span', { className: 'font-headline text-title-md text-on-surface font-semibold tracking-wide' }, 'AETHER'),
+                e('span', { className: 'hidden sm:inline font-label text-label-sm text-on-surface-variant' }, '— Arjun Jayraj')
+              ),
+
+              // Right Controls: Return to Sky, Reduced Motion toggle, Mobile Menu
+              e('div', { className: 'flex items-center gap-gutter-sm pointer-events-auto' },
+                activeIslandId && e('button', {
+                  'data-component-id': 'button-secondary',
+                  'data-component-type': 'button',
+                  'data-component-variant': 'secondary',
+                  type: 'button',
+                  onClick: () => setActiveIslandId(null),
+                  className: 'aether-glass inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-sm rounded-full border border-champagne-gold/40 text-on-surface font-label text-label-sm hover:bg-primary-container transition-colors'
+                },
+                  e('span', { className: 'material-symbols-outlined text-body-lg text-primary', 'aria-hidden': 'true' }, 'public'),
+                  e('span', null, 'Return to Sky')
+                ),
+                e('button', {
+                  type: 'button',
+                  onClick: () => setReducedMotion(v => !v),
+                  'aria-pressed': reducedMotion ? 'true' : 'false',
+                  title: reducedMotion ? 'Enable Ambient Motion' : 'Reduce Motion',
+                  className: 'aether-glass inline-flex items-center justify-center w-10 h-10 rounded-full border border-outline-variant/60 text-on-surface hover:border-champagne-gold transition-colors'
+                },
+                  e('span', { className: 'material-symbols-outlined text-title-md text-primary' }, reducedMotion ? 'pause_circle' : 'motion_photos_on')
+                ),
+                e('button', {
+                  type: 'button',
+                  onClick: () => setMobileMenuOpen(v => !v),
+                  'aria-label': 'Toggle World Map Menu',
+                  className: 'lg:hidden aether-glass inline-flex items-center justify-center w-10 h-10 rounded-full border border-champagne-gold/40 text-on-surface'
+                },
+                  e('span', { className: 'material-symbols-outlined text-title-md text-primary' }, mobileMenuOpen ? 'close' : 'menu')
+                )
+              )
+            ),
+
+            // HOVER TOOLTIP PILL (When hovering a 3D island)
+            hoveredIsland && !activeIsland && e('div', {
+              className: 'fixed top-20 left-1/2 -translate-x-1/2 z-20 pointer-events-none'
+            },
+              e('div', { className: 'aether-glass px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/50 flex items-center gap-gutter-sm' },
+                e('span', { className: 'font-label text-label-sm text-primary' }, hoveredIsland.number),
+                e('span', { className: 'font-headline text-body-lg font-semibold text-on-surface' }, hoveredIsland.name),
+                e('span', { className: 'font-body text-body-md text-on-surface-variant hidden sm:inline' }, '— Click to explore')
+              )
+            ),
+
+            // MOBILE FALLBACK NAVIGATION DRAWER
+            mobileMenuOpen && e('nav', {
+              'aria-label': 'Island Locations',
+              className: 'lg:hidden fixed inset-x-4 top-20 z-30 aether-glass-strong rounded-lg border border-champagne-gold/40 p-gutter-md flex flex-col gap-gutter-xs'
+            },
+              ISLANDS.map((isl) =>
+                e('button', {
+                  key: isl.id,
+                  type: 'button',
+                  onClick: () => {
+                    setActiveIslandId(isl.id);
+                    setMobileMenuOpen(false);
+                  },
+                  className: 'w-full p-gutter-sm rounded-DEFAULT flex items-center justify-between text-left transition-colors ' +
+                    (activeIslandId === isl.id ? 'bg-primary text-on-primary' : 'hover:bg-primary-container/60 text-on-surface')
+                },
+                  e('div', { className: 'flex items-center gap-gutter-sm' },
+                    e('span', { className: 'material-symbols-outlined text-title-md' }, isl.icon),
+                    e('span', { className: 'font-body text-body-md font-bold' }, isl.name)
+                  ),
+                  e('span', { className: 'font-label text-label-sm opacity-75' }, isl.number)
+                )
+              )
+            ),
+
+            // ACTIVE ISLAND INFORMATION DRAWER (Right side on desktop, bottom sheet on mobile)
+            activeIsland && e('aside', {
+              'aria-label': activeIsland.name + ' Details',
+              className: 'fixed z-30 bottom-20 left-4 right-4 sm:left-auto sm:right-6 sm:top-24 sm:bottom-24 sm:w-[440px] aether-glass-strong rounded-lg border border-champagne-gold/45 flex flex-col overflow-hidden pointer-events-auto'
+            },
+              // Drawer Header
+              e('header', { className: 'p-gutter-lg border-b border-outline-variant/40 flex items-start justify-between gap-gutter-md' },
+                e('div', { className: 'flex flex-col gap-gutter-xs' },
+                  e('div', { className: 'flex items-center gap-gutter-sm' },
+                    e('span', { className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm ' + activeIsland.accentClass }, 'Location ' + activeIsland.number),
+                    e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, activeIsland.subtitle)
+                  ),
+                  e('h2', {
+                    'data-design-text-token': 'headline-lg',
+                    className: 'font-headline text-headline-lg-mobile sm:text-headline-lg text-on-surface'
+                  }, activeIsland.name)
+                ),
+                e('button', {
+                  'data-component-id': 'button-icon',
+                  'data-component-type': 'button',
+                  'data-component-variant': 'icon',
+                  type: 'button',
+                  'aria-label': 'Close island panel',
+                  onClick: () => setActiveIslandId(null),
+                  className: 'inline-flex items-center justify-center w-9 h-9 rounded-full bg-surface-container text-on-surface hover:bg-primary-container transition-colors shrink-0'
+                },
+                  e('span', { className: 'material-symbols-outlined text-title-md' }, 'close')
+                )
+              ),
+              // Scrollable Drawer Body
+              e('div', { className: 'p-gutter-lg overflow-y-auto aether-scroll flex-1 max-h-[55vh] sm:max-h-none' },
+                e('p', { className: 'font-body text-body-md text-on-surface-variant mb-gutter-md pb-gutter-md border-b border-outline-variant/30 text-pretty' }, activeIsland.summary),
+                e(IslandPanelContent, {
+                  islandId: activeIsland.id,
+                  onNavigate: (id) => setActiveIslandId(id),
+                  reducedMotion
+                })
+              ),
+              // Sequential Island Tour Footer
+              e('footer', { className: 'px-gutter-lg py-gutter-sm border-t border-outline-variant/40 bg-surface-container-low/60 flex items-center justify-between gap-gutter-sm' },
+                (() => {
+                  const idx = ISLANDS.findIndex(i => i.id === activeIsland.id);
+                  const prevIsl = ISLANDS[(idx - 1 + ISLANDS.length) % ISLANDS.length];
+                  const nextIsl = ISLANDS[(idx + 1) % ISLANDS.length];
+                  return e(React.Fragment, null,
+                    e('button', {
+                      type: 'button',
+                      onClick: () => setActiveIslandId(prevIsl.id),
+                      className: 'inline-flex items-center gap-gutter-xs px-gutter-sm py-gutter-xs rounded-full text-on-surface-variant hover:text-primary hover:bg-primary-container/50 transition-colors font-label text-label-sm'
+                    },
+                      e('span', { className: 'material-symbols-outlined text-body-md' }, 'arrow_back'),
+                      e('span', null, prevIsl.name)
+                    ),
+                    e('button', {
+                      type: 'button',
+                      onClick: () => setActiveIslandId(nextIsl.id),
+                      className: 'inline-flex items-center gap-gutter-xs px-gutter-sm py-gutter-xs rounded-full text-primary hover:bg-primary-container/60 transition-colors font-label text-label-sm font-bold'
+                    },
+                      e('span', null, nextIsl.name),
+                      e('span', { className: 'material-symbols-outlined text-body-md' }, 'arrow_forward')
+                    )
+                  );
+                })()
+              )
+            ),
+
+            // BOTTOM ISLAND WAYPOINT DOCK (Desktop & Tablet quick navigation)
+            e('nav', {
+              'aria-label': 'World Island Navigation',
+              className: 'relative z-20 w-full p-gutter-md sm:p-gutter-lg flex items-center justify-center pointer-events-none'
+            },
+              e('div', { className: 'aether-glass pointer-events-auto hidden lg:flex items-center gap-gutter-xs p-gutter-xs rounded-full border border-champagne-gold/35' },
+                ISLANDS.map((isl) => {
+                  const isActive = activeIslandId === isl.id;
+                  return e('button', {
+                    key: isl.id,
+                    'data-component-id': isActive ? 'chip-filter' : 'chip-action',
+                    'data-component-type': 'chip',
+                    'data-component-variant': isActive ? 'filter' : 'action',
+                    'aria-pressed': isActive ? 'true' : 'false',
+                    type: 'button',
+                    onClick: () => setActiveIslandId(isActive ? null : isl.id),
+                    className: 'inline-flex items-center gap-gutter-xs px-gutter-md py-gutter-sm rounded-full transition-colors duration-state-change ease-state-change focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-champagne-gold ' +
+                      (isActive
+                        ? 'bg-primary text-on-primary shadow-sm'
+                        : 'text-on-surface hover:bg-primary-container/70')
+                  },
+                    e('span', { className: 'material-symbols-outlined text-body-lg', 'aria-hidden': 'true' }, isl.icon),
+                    e('span', { 'data-design-text-token': 'label-sm', className: 'font-label text-label-sm' }, isl.name)
+                  );
+                })
+              ),
+              // Compact mobile hint bar when no drawer is open
+              !activeIsland && e('div', { className: 'lg:hidden aether-glass pointer-events-auto px-gutter-md py-gutter-xs rounded-full border border-champagne-gold/35 flex items-center gap-gutter-sm' },
+                e('span', { className: 'material-symbols-outlined text-primary text-body-lg' }, 'touch_app'),
+                e('span', { className: 'font-label text-label-sm text-on-surface' }, 'Tap any island or open menu')
+              )
+            )
+          )
+        );
+      }
+
+      const rootEl = document.getElementById('root');
+      if (rootEl && typeof ReactDOM !== 'undefined') {
+        ReactDOM.createRoot(rootEl).render(e(AetherApp));
+      }
+    })();
+  </script>
+
+
+</body></html>

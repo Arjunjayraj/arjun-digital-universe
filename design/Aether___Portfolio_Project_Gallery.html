@@ -1,0 +1,484 @@
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aether — Portfolio Project Gallery</title>
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <script id="tailwind-config" data-stitch-original-src="fd517ce212bcef0a===../../tailwind.config.js">/** @type {import('tailwindcss').Config} */
+globalThis.tailwind = globalThis.tailwind || {};
+globalThis.tailwind.config = {
+  darkMode: 'class',
+  theme: {
+    extend: {
+      colors: {
+        'warm-ivory': '#F8F5EF',
+        'powder-blue': '#DCE8F0',
+        'soft-lavender': '#DCD2E8',
+        'dusty-blush': '#EED8D0',
+        'sage-green': '#C7D9CF',
+        'champagne-gold': '#B99A65',
+        'primary': '#745A2C',
+        'on-primary': '#FFFFFF',
+        'primary-container': '#FFEED8',
+        'on-primary-container': '#271900',
+        'secondary': '#3A4A43',
+        'on-secondary': '#FFFFFF',
+        'secondary-container': '#D5E7DD',
+        'on-secondary-container': '#0F1F18',
+        'surface': '#F8F5EF',
+        'on-surface': '#1C1C18',
+        'surface-container-low': '#FEFCF9',
+        'surface-container': '#F3F0EA',
+        'surface-container-high': '#E5E2DC',
+        'on-surface-variant': '#474743',
+        'outline': '#787772',
+        'outline-variant': '#C9C6C1',
+        'error': '#BA1A1A',
+        'on-error': '#FFFFFF',
+      },
+      borderRadius: {
+        'sm': '6px',
+        'DEFAULT': '12px',
+        'md': '16px',
+        'lg': '24px',
+        'full': '9999px',
+      },
+      spacing: {
+        'gutter-xs': '4px',
+        'gutter-sm': '8px',
+        'gutter-md': '16px',
+        'gutter-lg': '24px',
+        'gutter-xl': '32px',
+        'section': '48px',
+        'page-margin': '24px',
+      },
+      fontFamily: {
+        'display': ['"Crimson Pro"', 'sans-serif'],
+        'headline': ['"Crimson Pro"', 'sans-serif'],
+        'title': ['"Lato"', 'sans-serif'],
+        'body': ['"Lato"', 'sans-serif'],
+        'label': ['"Lato"', 'sans-serif'],
+      },
+      fontSize: {
+        'display-lg': ['56px', { lineHeight: '64px', letterSpacing: '-0.5px', fontWeight: '500' }],
+        'display-lg-mobile': ['32px', { lineHeight: '38px', letterSpacing: '-0.25px', fontWeight: '500' }],
+        'headline-lg': ['36px', { lineHeight: '42px', letterSpacing: '-0.25px', fontWeight: '600' }],
+        'headline-lg-mobile': ['28px', { lineHeight: '34px', letterSpacing: '0px', fontWeight: '600' }],
+        'headline-sm': ['24px', { lineHeight: '30px', letterSpacing: '0px', fontWeight: '600' }],
+        'title-md': ['18px', { lineHeight: '24px', letterSpacing: '0.1px', fontWeight: '700' }],
+        'body-lg': ['16px', { lineHeight: '24px', letterSpacing: '0.15px', fontWeight: '400' }],
+        'body-md': ['14px', { lineHeight: '21px', letterSpacing: '0.15px', fontWeight: '400' }],
+        'label-lg': ['14px', { lineHeight: '20px', letterSpacing: '0.5px', fontWeight: '700' }],
+        'label-sm': ['12px', { lineHeight: '16px', letterSpacing: '0.4px', fontWeight: '500' }],
+      },
+      transitionDuration: {
+        'state-change': '180ms',
+        'surface-enter': '320ms',
+        'surface-exit': '200ms',
+      },
+      transitionDelay: {
+        'state-change': '0ms',
+        'surface-enter': '0ms',
+        'surface-exit': '0ms',
+      },
+      transitionTimingFunction: {
+        'state-change': 'ease-out',
+        'surface-enter': 'cubic-bezier(0.2, 0, 0, 1)',
+        'surface-exit': 'cubic-bezier(0.3, 0, 1, 1)',
+      },
+    },
+  },
+};
+if (typeof module !== 'undefined') module.exports = globalThis.tailwind.config;
+</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:ital,wght@0,400;0,500;0,600;1,400&amp;family=Lato:wght@400;700&amp;family=Spline+Sans+Mono:wght@400;500&amp;display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=block" rel="stylesheet">
+  <style>
+    .material-symbols-outlined {
+      display: inline-block;
+      width: 1em;
+      height: 1em;
+      line-height: 1 !important;
+      box-sizing: content-box;
+      overflow: hidden;
+      white-space: nowrap;
+      direction: ltr;
+      vertical-align: middle;
+    }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: #F8F5EF;
+    }
+    .aether-glass {
+      background: rgba(248, 245, 239, 0.84);
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+      box-shadow: 0 20px 50px rgba(116, 90, 44, 0.08);
+    }
+    .sky-backdrop {
+      background: radial-gradient(circle at 20% 15%, #F8F5EF 0%, #DCE8F0 55%, #DCD2E8 100%);
+    }
+  </style>
+  <script src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/build/three.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.146.0/examples/js/controls/OrbitControls.js" crossorigin></script>
+</head>
+<body class="bg-surface text-on-surface font-body antialiased selection:bg-primary-container selection:text-on-primary-container">
+  <div id="root" class="min-h-screen w-full sky-backdrop flex flex-col"></div>
+
+  <script>
+    (function () {
+      const e = React.createElement;
+      const { useState, useEffect, useRef } = React;
+
+      const PROJECTS = [
+        {
+          id: 'careerpilot',
+          title: 'CareerPilot AI',
+          category: 'AI & Cloud Architecture',
+          filterGroup: 'Cloud & AI',
+          featured: true,
+          stack: ['React', 'Cloud APIs', 'AI Guidance', 'AWS'],
+          description: 'Intelligent career navigation platform pairing AI-driven guidance with scalable cloud architecture and a serene user interface.',
+          architecture: 'Built with a modular React frontend, serverless cloud endpoints, and structured prompt orchestration for personalized learning roadmaps.',
+          highlights: [
+            'AI-assisted skill gap mapping and role recommendations',
+            'Responsive, distraction-free editorial interface',
+            'Cloud-native deployment ready for high concurrency'
+          ]
+        },
+        {
+          id: 'findcart',
+          title: 'FindKart (FindCart)',
+          category: 'Smart Commerce Web App',
+          filterGroup: 'Web & UI/UX',
+          featured: true,
+          liveUrl: 'https://findkart-hackahon.netlify.app/',
+          stack: ['React', 'JavaScript', 'Tailwind CSS', 'Netlify'],
+          description: 'Smart everyday shopping across India—electronics, fashion, home essentials, and curated daily deals delivered fast with Cash on Delivery.',
+          architecture: 'Hackathon-built e-commerce web app featuring 256-bit encrypted authentication, saved addresses, order management, and a fast responsive cart.',
+          highlights: [
+            '100% Genuine verified sellers & Cash on Delivery at doorstep',
+            'Fast dispatch coverage across 19,000+ pin codes',
+            'Secure sign-in, saved addresses, and persistent cart'
+          ]
+        },
+        {
+          id: 'ecommerce',
+          title: 'E-Commerce Platform',
+          category: 'Web Development',
+          filterGroup: 'Web & UI/UX',
+          featured: false,
+          stack: ['HTML/CSS', 'JavaScript', 'React', 'SQL'],
+          description: 'Responsive full-stack storefront built with modern web technologies, clean product merchandising, and high-performance rendering.',
+          architecture: 'Structured storefront architecture with clean state management and relational catalog modeling.',
+          highlights: [
+            'Conversion-focused product detail pages',
+            'Accessible navigation and checkout clarity'
+          ]
+        },
+        {
+          id: 'cloud-migration',
+          title: 'Cloud Migration',
+          category: 'Cloud Solutions',
+          filterGroup: 'Cloud & AI',
+          featured: false,
+          stack: ['AWS', 'Azure', 'Linux', 'Networking'],
+          description: 'Scalable infrastructure migration onto AWS and Azure, optimizing reliability, security posture, and operational cost-efficiency.',
+          architecture: 'Multi-tier VPC networking, automated instance provisioning, and monitored backup/recovery workflows.',
+          highlights: [
+            'Completed on schedule and within budget',
+            'Improved uptime and infrastructure resilience'
+          ]
+        },
+        {
+          id: 'dashboard-analytics',
+          title: 'Dashboard Analytics',
+          category: 'Web App',
+          filterGroup: 'Web & UI/UX',
+          featured: false,
+          stack: ['React', 'Next.js', 'SQL', 'UI/UX'],
+          description: 'Interactive telemetry and business analytics interface turning complex metrics into clear, actionable visual views.',
+          architecture: 'Modular data visualization grid with clean typographic hierarchy and tabular numeric alignment.',
+          highlights: [
+            'At-a-glance KPI summaries and trend views',
+            'Responsive across desktop and tablet'
+          ]
+        },
+        {
+          id: 'mobile-brand',
+          title: 'Mobile App UI',
+          category: 'UI/UX Design',
+          filterGroup: 'Web & UI/UX',
+          featured: false,
+          stack: ['UI/UX Design', 'Design Systems', 'Prototyping'],
+          description: 'Human-centered mobile interface systems and cohesive visual identities crafted for usability and accessibility.',
+          architecture: 'Tokenized color, typography, and spacing systems ensuring visual harmony across every screen.',
+          highlights: [
+            'Accessible contrast and clear touch targets',
+            'Cohesive brand voice and visual language'
+          ]
+        },
+        {
+          id: 'portfolio-website',
+          title: 'Portfolio Website',
+          category: 'Web Development',
+          filterGroup: 'Web & UI/UX',
+          featured: false,
+          liveUrl: 'https://jayraj-folio-spark.lovable.app/',
+          stack: ['React', 'Three.js', 'Tailwind CSS', 'UI/UX'],
+          description: 'Personal portfolio showcasing cloud engineering, DevOps automation, and modern web craftsmanship.',
+          architecture: 'Evolved from a clean editorial web portfolio into Aether—an interactive 3D floating island sanctuary.',
+          highlights: [
+            'Authentic bio, skills, projects, and client testimonials',
+            'Responsive across desktop, tablet, and mobile'
+          ]
+        }
+      ];
+
+      function ProjectModelViewer({ project }) {
+        const viewerRef = useRef(null);
+        const [wireframe, setWireframe] = useState(false);
+        const [autoSpin, setAutoSpin] = useState(true);
+        const stateRef = useRef({ wireframe: false, autoSpin: true });
+
+        stateRef.current.wireframe = wireframe;
+        stateRef.current.autoSpin = autoSpin;
+
+        useEffect(() => {
+          const el = viewerRef.current;
+          if (!el || typeof THREE === 'undefined') return;
+
+          let renderer, scene, camera, controls, frameId, mainGroup;
+          try {
+            const w = el.clientWidth || 420;
+            const h = el.clientHeight || 240;
+            scene = new THREE.Scene();
+            scene.background = new THREE.Color('#EEF3F7');
+
+            camera = new THREE.PerspectiveCamera(40, w / h, 0.1, 50);
+            camera.position.set(0, 1.4, 4.2);
+
+            renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+            renderer.setSize(w, h);
+            renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+            el.innerHTML = '';
+            el.appendChild(renderer.domElement);
+
+            controls = new THREE.OrbitControls(camera, renderer.domElement);
+            controls.enableDamping = true;
+            controls.dampingFactor = 0.08;
+            controls.minDistance = 2.4;
+            controls.maxDistance = 6.5;
+
+            scene.add(new THREE.HemisphereLight('#F8F5EF', '#DCD2E8', 1.2));
+            const dir = new THREE.DirectionalLight('#FFF5E4', 1.3);
+            dir.position.set(4, 6, 4);
+            scene.add(dir);
+
+            mainGroup = new THREE.Group();
+            const matGold = new THREE.MeshStandardMaterial({ color: '#B99A65', roughness: 0.25, metalness: 0.78 });
+            const matGlass = new THREE.MeshPhysicalMaterial({ color: '#DCE8F0', roughness: 0.1, metalness: 0.1, transparent: true, opacity: 0.62 });
+            const matSage = new THREE.MeshStandardMaterial({ color: '#C7D9CF', roughness: 0.5, metalness: 0.15 });
+            const matLav = new THREE.MeshStandardMaterial({ color: '#DCD2E8', roughness: 0.45, metalness: 0.2 });
+
+            if (project.id === 'careerpilot') {
+              const core = new THREE.Mesh(new THREE.IcosahedronGeometry(0.85, 1), matGlass);
+              const ring1 = new THREE.Mesh(new THREE.TorusGeometry(1.25, 0.04, 12, 48), matGold);
+              const ring2 = new THREE.Mesh(new THREE.TorusGeometry(1.45, 0.03, 12, 48), matLav);
+              ring2.rotation.x = Math.PI / 3;
+              mainGroup.add(core, ring1, ring2);
+            } else if (project.id === 'findcart') {
+              const box = new THREE.Mesh(new THREE.BoxGeometry(1.15, 1.15, 1.15), matGlass);
+              const frame = new THREE.Mesh(new THREE.TorusGeometry(1.15, 0.05, 10, 4), matGold);
+              frame.rotation.z = Math.PI / 4;
+              const orb = new THREE.Mesh(new THREE.OctahedronGeometry(0.45, 0), matGold);
+              mainGroup.add(box, frame, orb);
+            } else if (project.id === 'cloud-migration') {
+              for (let i = 0; i < 3; i++) {
+                const layer = new THREE.Mesh(new THREE.CylinderGeometry(1.0 - i * 0.2, 1.1 - i * 0.2, 0.28, 6), i === 1 ? matGold : matSage);
+                layer.position.y = (i - 1) * 0.52;
+                mainGroup.add(layer);
+              }
+            } else {
+              const prism = new THREE.Mesh(new THREE.OctahedronGeometry(0.95, 0), matGlass);
+              const halo = new THREE.Mesh(new THREE.TorusGeometry(1.2, 0.04, 10, 36), matGold);
+              halo.rotation.x = Math.PI / 2.4;
+              mainGroup.add(prism, halo);
+            }
+            scene.add(mainGroup);
+
+            const clock = new THREE.Clock();
+            function tick() {
+              frameId = requestAnimationFrame(tick);
+              const dt = Math.min(clock.getDelta(), 0.05);
+              mainGroup.traverse((obj) => {
+                if (obj.isMesh && obj.material) {
+                  obj.material.wireframe = stateRef.current.wireframe;
+                }
+              });
+              if (stateRef.current.autoSpin) {
+                mainGroup.rotation.y += dt * 0.55;
+              }
+              controls.update();
+              renderer.render(scene, camera);
+            }
+            tick();
+
+            return () => {
+              cancelAnimationFrame(frameId);
+              controls.dispose();
+              renderer.dispose();
+            };
+          } catch (err) {}
+        }, [project.id]);
+
+        return e('div', { className: 'rounded-md overflow-hidden border border-champagne-gold/45 bg-powder-blue/40 flex flex-col' },
+          e('div', {
+            ref: viewerRef,
+            className: 'w-full h-56 cursor-grab active:cursor-grabbing',
+            'aria-label': 'Interactive 3D model for ' + project.title
+          }),
+          e('div', { className: 'px-gutter-md py-gutter-xs bg-surface-container-low/90 border-t border-outline-variant/40 flex items-center justify-between gap-gutter-sm' },
+            e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Drag to rotate • Scroll to zoom'),
+            e('div', { className: 'flex items-center gap-gutter-xs' },
+              e('button', {
+                type: 'button',
+                onClick: () => setWireframe(v => !v),
+                'aria-pressed': wireframe ? 'true' : 'false',
+                className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm border transition-colors ' +
+                  (wireframe ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-outline-variant/60 text-on-surface hover:bg-primary-container')
+              }, 'Wireframe'),
+              e('button', {
+                type: 'button',
+                onClick: () => setAutoSpin(v => !v),
+                'aria-pressed': autoSpin ? 'true' : 'false',
+                className: 'px-gutter-sm py-gutter-xs rounded-full font-label text-label-sm border transition-colors whitespace-nowrap ' +
+                  (autoSpin ? 'bg-primary text-on-primary border-primary' : 'bg-surface-container border-outline-variant/60 text-on-surface hover:bg-primary-container')
+              }, autoSpin ? 'Spin' : 'Paused')
+            )
+          )
+        );
+      }
+
+      function ProjectGalleryApp() {
+        const [activeFilter, setActiveFilter] = useState('All');
+        const [selectedProject, setSelectedProject] = useState(PROJECTS[0]);
+
+        const filters = ['All', 'Featured', 'Cloud & AI', 'Web & UI/UX'];
+        const visibleProjects = PROJECTS.filter((p) => {
+          if (activeFilter === 'All') return true;
+          if (activeFilter === 'Featured') return p.featured;
+          return p.filterGroup === activeFilter;
+        });
+
+        return e('div', { className: 'min-h-screen w-full flex flex-col' },
+          // Sticky Glass Header
+          e('header', { className: 'sticky top-0 z-20 aether-glass border-b border-champagne-gold/30 px-gutter-md sm:px-gutter-xl py-gutter-md' },
+            e('div', { className: 'max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-gutter-md' },
+              e('div', { className: 'flex items-center gap-gutter-sm' },
+                e('span', { className: 'material-symbols-outlined text-primary text-headline-sm', 'aria-hidden': 'true' }, 'museum'),
+                e('div', { className: 'flex flex-col' },
+                  e('h1', { 'data-design-text-token': 'headline-sm', className: 'font-headline text-headline-sm text-on-surface leading-tight' }, 'The Project Gallery'),
+                  e('span', { className: 'font-label text-label-sm text-on-surface-variant' }, 'Aether — Arjun Jayraj')
+                )
+              ),
+              e('div', { className: 'flex flex-wrap items-center gap-gutter-xs' },
+                filters.map((f) => {
+                  const isActive = activeFilter === f;
+                  return e('button', {
+                    key: f,
+                    type: 'button',
+                    'aria-pressed': isActive ? 'true' : 'false',
+                    onClick: () => setActiveFilter(f),
+                    className: 'px-gutter-md py-gutter-xs rounded-full font-label text-label-sm border transition-colors ' +
+                      (isActive
+                        ? 'bg-primary text-on-primary border-primary'
+                        : 'bg-surface-container-low/80 text-on-surface border-outline-variant/60 hover:bg-primary-container')
+                  }, f);
+                })
+              )
+            )
+          ),
+
+          // Main Content: Gallery Grid + Live 3D Artifact Inspector
+          e('main', { className: 'flex-1 max-w-7xl w-full mx-auto p-gutter-md sm:p-gutter-xl grid grid-cols-1 lg:grid-cols-12 gap-gutter-lg items-start' },
+            // Left: Project Cards Grid (7 cols on desktop)
+            e('section', { 'aria-label': 'Project Collection', className: 'lg:col-span-7 grid grid-cols-1 sm:grid-cols-2 gap-gutter-md items-stretch' },
+              visibleProjects.map((proj) => {
+                const isSelected = selectedProject && selectedProject.id === proj.id;
+                return e('button', {
+                  key: proj.id,
+                  type: 'button',
+                  'data-component-id': 'card-interactive-2',
+                  'data-component-type': 'card',
+                  'data-component-variant': 'interactive',
+                  onClick: () => setSelectedProject(proj),
+                  className: 'h-full text-left p-gutter-lg rounded-md aether-glass border transition-colors flex flex-col justify-between gap-gutter-md cursor-pointer ' +
+                    (isSelected ? 'border-primary ring-2 ring-primary/40' : 'border-champagne-gold/35 hover:border-primary')
+                },
+                  e('div', { className: 'flex flex-col gap-gutter-xs' },
+                    e('div', { className: 'flex items-center justify-between gap-gutter-sm' },
+                      e('span', { className: 'font-label text-label-sm text-primary' }, proj.category),
+                      proj.featured && e('span', { className: 'px-gutter-sm py-gutter-xs rounded-full bg-primary text-on-primary font-label text-label-sm' }, 'Featured')
+                    ),
+                    e('h2', { className: 'font-headline text-headline-sm text-on-surface' }, proj.title),
+                    e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, proj.description)
+                  ),
+                  e('div', { className: 'flex flex-wrap gap-gutter-xs pt-gutter-xs' },
+                    proj.stack.slice(0, 3).map((tech) =>
+                      e('span', { key: tech, className: 'px-gutter-sm py-gutter-xs rounded-full bg-surface-container-low border border-outline-variant/60 font-label text-label-sm text-on-surface' }, tech)
+                    )
+                  )
+                );
+              })
+            ),
+
+            // Right: Live 3D Artifact Inspector (5 cols on desktop)
+            selectedProject && e('aside', {
+              'aria-label': 'Selected Project Inspector',
+              className: 'lg:col-span-5 lg:sticky lg:top-24 aether-glass rounded-lg border border-champagne-gold/45 p-gutter-lg flex flex-col gap-gutter-md'
+            },
+              e('div', { className: 'flex flex-col gap-gutter-xs' },
+                e('span', { className: 'font-label text-label-sm text-primary uppercase tracking-wider' }, selectedProject.category),
+                e('h2', { className: 'font-headline text-headline-lg-mobile text-on-surface' }, selectedProject.title)
+              ),
+              e(ProjectModelViewer, { project: selectedProject }),
+              e('div', { className: 'flex flex-col gap-gutter-xs' },
+                e('h3', { className: 'font-title text-body-lg font-bold text-on-surface' }, 'Architecture & Craft'),
+                e('p', { className: 'font-body text-body-md text-on-surface-variant text-pretty' }, selectedProject.architecture)
+              ),
+              e('ul', { className: 'flex flex-col gap-gutter-xs' },
+                selectedProject.highlights.map((hl) =>
+                  e('li', { key: hl, className: 'flex items-start gap-gutter-sm font-body text-body-md text-on-surface-variant' },
+                    e('span', { className: 'material-symbols-outlined text-primary text-body-lg shrink-0' }, 'auto_awesome'),
+                    e('span', null, hl)
+                  )
+                )
+              ),
+              selectedProject.liveUrl && e('a', {
+                href: selectedProject.liveUrl,
+                target: '_blank',
+                rel: 'noopener noreferrer',
+                className: 'w-full py-gutter-sm rounded-full bg-primary text-on-primary font-label text-label-lg hover:bg-on-primary-container transition-colors inline-flex items-center justify-center gap-gutter-xs'
+              },
+                e('span', { className: 'material-symbols-outlined text-body-lg' }, 'open_in_new'),
+                e('span', null, 'Visit Live Project')
+              )
+            )
+          )
+        );
+      }
+
+      const rootEl = document.getElementById('root');
+      if (rootEl && typeof ReactDOM !== 'undefined') {
+        ReactDOM.createRoot(rootEl).render(e(ProjectGalleryApp));
+      }
+    })();
+  </script>
+
+
+</body></html>
